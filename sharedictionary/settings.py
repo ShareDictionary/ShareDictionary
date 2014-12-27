@@ -11,13 +11,21 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+<<<<<<< HEAD
 PROJECT_DIR = os.path.dirname(__file__)
+=======
+
+>>>>>>> 641977e9da2ac404349ed81559075a94762e7e90
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'i^ymam!x52$=vx8kcsg+p_l)o$c@vokt*sp!)7b3w(ps5-pyqe'
+=======
+SECRET_KEY = '7=c98k@!%ri47^g9bgmx+bp_h04t(+eqzubf6gl66y#z$m3kn7'
+>>>>>>> 641977e9da2ac404349ed81559075a94762e7e90
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -25,6 +33,10 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
+<<<<<<< HEAD
+=======
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+>>>>>>> 641977e9da2ac404349ed81559075a94762e7e90
 
 
 # Application definition
@@ -36,8 +48,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'member',
     'dictionary',
+=======
+    'polls',
+>>>>>>> 641977e9da2ac404349ed81559075a94762e7e90
 )
 
 MIDDLEWARE_CLASSES = (
@@ -65,6 +81,7 @@ DATABASES = {
     }
 }
 
+<<<<<<< HEAD
 TEMPLATE_DIRS = (
     'templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -82,12 +99,18 @@ STATICFILES_DIRS = (
     '/deffer/sharedictionary/static/'
 )
 
+=======
+>>>>>>> 641977e9da2ac404349ed81559075a94762e7e90
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
+<<<<<<< HEAD
 TIME_ZONE = 'Asia/Taipei'
+=======
+TIME_ZONE = 'UTC'
+>>>>>>> 641977e9da2ac404349ed81559075a94762e7e90
 
 USE_I18N = True
 
@@ -96,6 +119,7 @@ USE_L10N = True
 USE_TZ = True
 
 
+<<<<<<< HEAD
 # Static files (CSS, JavaScript, /media)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
@@ -152,3 +176,9 @@ STATIC_PATH='/static/'
 ##os.path.join(BASE_DIR,'media').replace('\\', '/')
 MEDIA_PATH='/media/'
 #MEDIA_URL = '/media/'
+=======
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.7/howto/static-files/
+
+STATIC_URL = '/static/'
+>>>>>>> 641977e9da2ac404349ed81559075a94762e7e90
