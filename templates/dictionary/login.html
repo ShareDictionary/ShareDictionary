@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+ 
+{% block content %}
+ 
+{% if form.has_errors %}
+<p>Please try again</p>
+{% endif %}
+ 
+<form method="post" action=".">
+<table>
+<tr><td><label for="id_username">用户名：</label></td><td>{{ form.username }}</td></tr>
+<tr><td><label for="id_password">密码：</label></td><td>{{ form.password }}</td></tr>
+</table>
+ 
+<input type="submit" value="登录" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+ 
+{% endblock %}
