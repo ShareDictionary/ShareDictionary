@@ -23,6 +23,7 @@
         "@path": "/.c9/runners",
         "configs": {
             "@inited": "true",
+<<<<<<< HEAD
             "json()": {
                 "Django": {
                     "command": "",
@@ -31,6 +32,9 @@
                     "runner": "Django"
                 }
             }
+=======
+            "json()": {}
+>>>>>>> 1c237370b697e9b44c0c6685382bf198ba0620c4
         }
     },
     "share": {
