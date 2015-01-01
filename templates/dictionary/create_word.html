@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<head>
+    <title>create word</title>
+</head>
+
+<body>
+    <div class="page-header">
+            <a href="{% url 'blog.views.create' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><a href="/">create a new word</a></h1>
+    </div>
+    <div class="formsq">
+        <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+            {{ form.as_p }}
+            <div class="header">
+                <h1>share a word</h1>
+            </div>
+
+            <div class="content">
+                <h5>word<h5>
+                <input id="id_word" name="word" type="text" />
+                <h5>description</h5>
+                <input id="id_description" name="description" type="text" />
+                <h5>sentence</h5>
+                <input id="id_sentence" name="sentence" type="text" />
+                <h5>video_Url</h5>
+                <input id="id_videoUrl" name="videoUrl" type="text" />
+            </div>
+            <button type="submit" class="save btn btn-default">create</button>
+            </form>
+            
+
+</body>
+
+</html>
+

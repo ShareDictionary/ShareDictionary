@@ -1,0 +1,59 @@
+{% extends 'dictionary/base.html' %}
+
+
+
+
+{% block content %}
+
+
+   
+ 
+    
+                <div class="col-md-1" id="left">
+                    <ul>
+                        <li>
+                            <a class="glyphicon glyphicon-chevron-up" id="button-up"></a>
+                        </li>
+                        <li><span class="counter">vocabulary.likes</span>
+                        </li>
+                        <li>
+                            <a class="glyphicon glyphicon-chevron-down" id="button-down"></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-9" id="middle-left">
+
+                    <form id="word">
+                        <div>
+                            <a class="form-control status-box" rows="2">{{ vocabulary.word }}</a>
+                        </div>
+                    </form>
+
+                    <form id="explain">
+                        <div>
+                            <a class="form-control status-box" rows="2">{{ vocabulary.description }}</a>
+                        </div>
+                    </form>
+
+                    <form id: "sentance">
+                        <div>
+                            <a class="form-control status-box" rows="2">{{ vocabulary.sentance }}</a>
+                        </div>
+                    </form>
+
+                    <object data="{{ vocabulary.video }}">
+
+                    </object>
+
+                </div>
+
+                <div class="col-md-2" id="middle-right">
+                    <a class="glyphicon glyphicon-plus" id="plus"></a>
+                    <img src="images/facebook.png" id="facebookImage">
+                </div>
+
+          
+
+    
+{% endblock content %}
