@@ -30,10 +30,10 @@ urlpatterns = patterns('',
     # url(r'^$', 'sharedictionary.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     url(r'^$', views.show_index),
-    url(r'^$', include('social_auth.urls')),
+    #url(r'^$', include('social_auth.urls')),
     url(r'^login/', 'thirdauth.views.home', name='home'),
-    url(r'', include('social.apps.django_app.urls', namespace='social')),
-    url(r'', include('django.contrib.auth.urls', namespace='auth')),
+    #url(r'', include('social.apps.django_app.urls', namespace='social')),
+    #url(r'', include('django.contrib.auth.urls', namespace='auth')),
     #url(r'^done$', 'reviews.views.done', name='done'),
 
     

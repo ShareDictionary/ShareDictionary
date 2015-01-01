@@ -12,7 +12,7 @@ class Vocabulary(models.Model):
 
     def post(self):
         self.posted_date = timezone.now()
-        self.save()
+        #self.save()
 
     def __str__(self):
         return self.word

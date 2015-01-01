@@ -49,7 +49,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dictionary',
-    'social.apps.django_app.default',
+    #'social.apps.django_app.default',
     'thirdauth',
     
 
@@ -96,8 +96,8 @@ TEMPLATE_CONTEXT_PROCESSORS= (
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
-    'social.apps.django_app.context_processors.backends',
-    'social.apps.django_app.context_processors.login_redirect',
+   # 'social.apps.django_app.context_processors.backends',
+   # 'social.apps.django_app.context_processors.login_redirect',
   
     )
 
@@ -107,7 +107,7 @@ STATICFILES_DIRS = (
 )
 
 AUTHENTICATION_BACKENDS = (
-   'social.backends.facebook.FacebookOAuth2',
+   #'social.backends.facebook.FacebookOAuth2',
    
    'django.contrib.auth.backends.ModelBackend',
 )
@@ -133,7 +133,7 @@ USE_TZ = True
 
 
 # media files
-MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
+MEDIA_ROOT = os.path.join(PROJECT_DIR, '/media/')
 MEDIA_URL = '/media/'
 STATIC_PATH='/static/'
 MEDIA_PATH='/media/'
