@@ -96,6 +96,7 @@ TEMPLATE_CONTEXT_PROCESSORS= (
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
+
     'social.apps.django_app.context_processors.backends',
     'social.apps.django_app.context_processors.login_redirect',
   
@@ -107,12 +108,18 @@ STATICFILES_FINDERS = (
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
+
+   # 'social.apps.django_app.context_processors.backends',
+   # 'social.apps.django_app.context_processors.login_redirect',
+
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     '/static/'
 )
 
 AUTHENTICATION_BACKENDS = (
+
    'social.backends.facebook.FacebookOAuth2',
    
    'django.contrib.auth.backends.ModelBackend',
@@ -137,6 +144,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 
+
 # media files
 MEDIA_ROOT = '/media/'
 MEDIA_URL = '/media/'
@@ -149,5 +157,26 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 
+
+# media files
+MEDIA_ROOT = os.path.join(PROJECT_DIR, '/media/')
+MEDIA_URL = '/media/'
+STATIC_PATH='/static/'
+MEDIA_PATH='/media/'
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.6/howto/static-files/
+
+STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = '/login/'
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+SOCIAL_AUTH_RAISE_EXCEPTIONS = True
+RAISE_EXCEPTIONS = True
+DEBUG = True
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = '686275314821464'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'fc51fa0bca0b957fcabae34d4a28fe52'
+FACEBOOK_APP_ID = '686275314821464'
+FACEBOOK_API_SECRET = 'fc51fa0bca0b957fcabae34d4a28fe52'
 
 

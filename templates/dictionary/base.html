@@ -1,9 +1,7 @@
-{% load staticfiles %}
 <!DOCTYPE HTML>
 <html lang="en-US">
 
 <head>
-
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
@@ -15,44 +13,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="/static/css/loginstyle.css" media="screen" type="text/css" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <!--link rel="stylesheet" href="/static/css/loginstyle.css" media="screen" type="text/css" /-->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="media/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../media/icon.png" type="/media/x-icon">
 
-    <link rel="stylesheet" href="/static/css/styleapp.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/loginstyle.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="../../static/css/styleapp.css">
+    <link rel="stylesheet" href="../../static/css/style.css">
+
 
     <!-- Latest compiled and minified CSS -->
 
-
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- Optional theme -->
-
-
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-    <link href="http://code.jboxcdn.com/0.3.2/jBox.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="../../static/css/MyLoginStyle.css">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
-    <script src="/static/js/index.js"></script>
-    <script src="http://code.jboxcdn.com/0.3.2/jBox.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="../../static/js/index.js"></script>
 
 
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jboxcdn.com/0.3.2/jBox.min.js"></script>
-    <link href="http://code.jboxcdn.com/0.3.2/jBox.css" rel="stylesheet">
 
 </head>
 
 <body>
-    <span class="tooltip" title="My tooltip">Hover me!</span>
-    <span class="tooltip" title="Another tooltip">Hover me!</span>
-
-
 
 
 
@@ -61,6 +47,7 @@
             <ul class="summary">
                 <li class="chapter active" data-level="0" data-path="index.html">
                     <a href="./index.html">
+                            
                              Welcome <strong>user</strong>
                         </a>
                 </li>
@@ -100,14 +87,11 @@
                 <div class="book-header">
                     <!-- Actions Left -->
 
-
-
-
-                    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><img src="{{MEDIA_URL}}images/list23.png">
+                    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><img src="../../media/list23.png">
                     </a>
                     <div class="dropdown pull-right">
                         <h4></h4>
-                        <span>
+                        <!--span>
                     <h4><a href="#" id="loginform">Login</a></h4>
                     <div class="login">
                       <div class="arrow-up"></div>
@@ -123,10 +107,10 @@
                         </div>
                       </div>
                     </div>
-                    </span>
-                        <!--a data-toggle="modal" href="#myModal"><button type="button" class="btn">Login</button></a-->
-
-
+                    </span-->
+                        <a data-toggle="modal" href="#myModal">
+                            <button type="button" class="btn">Login</button>
+                        </a>
                     </div>
 
                 </div>
@@ -134,10 +118,9 @@
                 <div class="page-wrapper" tabindex="-1">
                     <div class="page-inner">
                         <section class="normal" id="section-gitbook_1">
-                            <div align="center"><img src="{{MEDIA_URL}}images/logo.png">
+                            <div align="center"><img src="../../media/logo.png">
                                 <h3></h3>
                             </div>
-                            <div id="tooltiptest" title="123">Click me to open a modal window!</div>
                             <div align="center">
                                 <form method="get" action="/search" id="search">
                                     <input name="q" type="text" size="500" placeholder="Search..." />
@@ -147,66 +130,83 @@
                         </section>
                         <br>
 
-                        <div id="object">
-                            <div class="page-inner container">
-                                <div class="row">
-                                    {% block content %}
-                                    {% endblock %}
-                                </div>
+                        {% block content %}
+                        {% endblock content %}
 
-                            </div>
-                        </div>
-                        
+                    </div>
+                </div>
             </div>
             <a href="./chapter1/chapter1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 欢迎使用 Swift" style="margin-right: 0px;"><img src="images/next15.png">
             </a>
         </div>
 
         <!--modal-->
-
-
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" height="500" width="400">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Testing Modal</h4>
-                    </div>
-                    content
+                <!--
+            <div class="modal-content">
+            <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">Testing Modal</h4>
+            </div>
+            <div class="modal-body">
+            -->
+                <div class="ribbon"></div>
+                <div class="login2">
+                    <h1>Login</h1>
+                    <p>This will be an amazing experience</p>
+                    <form action="login" -->
+                        <div class="input">
+                            <div class="blockinput">
+                                <i class="icon-envelope-alt"></i>
+                                <input type="mail" placeholder="Email">
+                            </div>
+                        </div>
+                        <h4></h4>
+                        <div class="input">
+                            <div class="blockinput">
+                                <i class="icon-unlock"></i>
+                                <input type="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <button>Login</button>
+                        <h5></h5>
+                        <a href="/auth/facebook" class="btn btn-facebook btn-lg btn-block">Sign in with Facebook</a>
+                    </form>
+                    <h3></h3>
+                </div>
+                <hr>
+                <!--/div><!-- /.modal-body -->
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
 
-                    <!--
-            </div><!-- /.modal-content -->
-                    <!--
-          </div><!-- /.modal-dialog -->
-                    <!--
-        </div><!-- /.modal -->
 
+    <script src="/static/js/index.js"></script>
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/app2.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="/static/js/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    <script src="/static/js/plugins/gitbook-plugin-livereload/plugin.js"></script>
 
-
-
-                    <script src="/static/js/index.js"></script>
-                    <script src="/static/js/app.js"></script>
-                    <script src="/static/js/app2.js"></script>
-                    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-                    <script src="/static/js/plugins/gitbook-plugin-mathjax/plugin.js"></script>
-                    <script src="/static/js/plugins/gitbook-plugin-livereload/plugin.js"></script>
-
-                    <script>
-                    require(["gitbook"], function(gitbook) {
-                        var config = {
-                            "fontSettings": {
-                                "theme": null,
-                                "family": "sans",
-                                "size": 2
-                            }
-                        };
-                        gitbook.start(config);
-                    });
-                    </script>
-
-
+    <script>
+    require(["gitbook"], function(gitbook) {
+        var config = {
+            "fontSettings": {
+                "theme": null,
+                "family": "sans",
+                "size": 2
+            }
+        };
+        gitbook.start(config);
+    });
+    </script>
 </body>
 
 </html>
 
+</html>

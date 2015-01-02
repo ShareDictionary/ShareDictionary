@@ -4,13 +4,18 @@ from django.conf import settings
 from django.contrib import admin
 from dictionary import views
 
+
 admin.autodiscover()
+
+
+
 urlpatterns = patterns('',
     # Examples:
     #url(r'^$', 'sharedictionary.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     (r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':  settings.STATIC_PATH}),
     (r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':  settings.MEDIA_PATH}),
+
    
     url(r'^admin/', include(admin.site.urls)),
     
@@ -28,8 +33,3 @@ urlpatterns = patterns('',
 
 
 
-if settings.DEBUG:
-    # static files (images, css, javascript, etc.)
-    urlpatterns += patterns('',
-        (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
-        'document_root': settings.MEDIA_ROOT}))
