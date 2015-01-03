@@ -1,6 +1,6 @@
 
 {% extends 'dictionary/base.html' %}
-
+{% load staticfiles %}
 
 
 
@@ -50,7 +50,7 @@
 
                                     <div class="col-md-2" id="middle-right">
                                         <a class="glyphicon glyphicon-plus" id="plus"></a>
-                                        <img src="../../media/facebook.png" id="facebookImage">
+                                        <img src="{% static "image/facebook.png" %}" id="facebookImage">
                                     </div>
 
                                 </div>

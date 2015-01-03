@@ -102,11 +102,11 @@ TEMPLATE_CONTEXT_PROCESSORS= (
   
     )
 
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
+#STATICFILES_FINDERS = (
+ #   'django.contrib.staticfiles.finders.FileSystemFinder',
+ #   'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+#)
 
 
    # 'social.apps.django_app.context_processors.backends',
@@ -146,27 +146,25 @@ USE_TZ = True
 
 
 # media files
-MEDIA_ROOT = '/media/'
-MEDIA_URL = '/media/'
-MEDIA_PATH='/media/'
+#MEDIA_ROOT = '/media/'
 
+MEDIA_PATH='/sharedictionary/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media').replace('\\', '/')
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.6/howto/static-files/
 STATIC_PATH='/static/'
 STATIC_URL = '/static/'
+
+
+
+ADMIN_MEDIA_PREFIX = '/media/admin/'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-
-
-# media files
-MEDIA_ROOT = os.path.join(PROJECT_DIR, '/media/')
-MEDIA_URL = '/media/'
-STATIC_PATH='/static/'
-MEDIA_PATH='/media/'
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-
-STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/login/'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 SOCIAL_AUTH_RAISE_EXCEPTIONS = True

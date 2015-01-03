@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE HTML>
 <html lang="en-US">
 
@@ -87,7 +89,7 @@
                 <div class="book-header">
                     <!-- Actions Left -->
 
-                    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><img src="../../media/list23.png">
+                    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><img src="{% static "image/list23.png" %}">
                     </a>
                     <div class="dropdown pull-right">
                         <h4></h4>
@@ -118,7 +120,7 @@
                 <div class="page-wrapper" tabindex="-1">
                     <div class="page-inner">
                         <section class="normal" id="section-gitbook_1">
-                            <div align="center"><img src="../../media/logo.png">
+                            <div align="center"><img src="{% static "image/logo.png" %}">
                                 <h3></h3>
                             </div>
                             <div align="center">
@@ -136,7 +138,7 @@
                     </div>
                 </div>
             </div>
-            <a href="./chapter1/chapter1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 欢迎使用 Swift" style="margin-right: 0px;"><img src="images/next15.png">
+            <a href="./chapter1/chapter1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 欢迎使用 Swift" style="margin-right: 0px;"><img src="{% static "image/next15.png" %}">
             </a>
         </div>
 
