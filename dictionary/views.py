@@ -6,6 +6,7 @@ from .models import Vocabulary
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 
+
 # Create your views here.
 def show_index(request):
     vocabulary = Vocabulary.objects.filter(word__isnull=False).order_by('posted_date')

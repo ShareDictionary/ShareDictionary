@@ -1,7 +1,7 @@
 
 {% extends 'dictionary/base.html' %}
 {% load staticfiles %}
-
+{% load embed_video_tags %}
 
 
 {% block content %}
@@ -42,9 +42,13 @@
                                                 <a class="form-control status-box" rows="2">{{ vocabulary.sentance }}</a>
                                             </div>
                                         </form>
-
-                                        <object data="{{ vocabulary.video }}">
-
+                                        
+                                        {% video vocabulary.video as my_video %}
+                                        
+                                           {% video my_video '600x400' %}
+                                           
+                                        {% endvideo %}
+    
                                         </object>
 
                                     </div>
