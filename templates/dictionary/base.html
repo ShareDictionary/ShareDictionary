@@ -41,41 +41,37 @@
 </head>
 
 <body>
+    <!-- BLOCK: FB SDK initialization -->
+    <div id="fb-root"></div>
     <script>
-    var FB; // to avoid error "undeclared variable", until FB got initialized
-    var myQueue = new Array();
-    function queueAdd(f){
-      if (FB === undefined)
-        myQueue.push(f);
-      else
-        f();
-    }
-
-    function processQueue(){
-      var f;
-      while(f = myQueue.shift())
-        f();
-    }
-    
-      window.fbAsyncInit = function() {
+    window.fbAsyncInit = function() {
+        // init the FB JS SDK
         FB.init({
-          appId      : 'your-app-id',
-          xfbml      : true,
-          version    : 'v2.1'
+        appId      : 821388711240155,                        // App ID from the app dashboard
+        cookie     : true,                                 // Allowed server-side to fetch fb auth cookie
+        status     : true,                                 // Check Facebook Login status
+        xfbml      : true                                  // Look for social plugins on the page
         });
-      };
 
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+        // Additional initialization code such as adding Event Listeners goes here
+        window.fbLoaded();
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        //js.src = "//connect.facebook.net/en_US/all.js";
+        // Debug version of Facebook JS SDK
+        js.src = "https://connect.facebook.net/en_US/all/debug.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
     </script>
+    <!-- ENDBLOCK: FB SDK initialization -->
 
-
-
+<div id="status">
+</div>
     <div class="book" data-level="0" data-basepath="." data-revision="1418628508539">
         <div class="book-summary">
             <ul class="summary">
@@ -152,13 +148,20 @@
                 <div class="page-wrapper" tabindex="-1">
                     <div class="page-inner">
                         <section class="normal" id="section-gitbook_1">
-                            <div align="center"><img src="{% static "image/logo.png" %}">
-                                <h3></h3>
+                            <div 
+                                align="center"><img src="{% static "image/logo.png" %}">
                             </div>
                             <div align="center">
-                                <form method="get" action="/search" id="search">
-                                    <input name="q" type="text" size="500" placeholder="Search..." />
+                                <form action="/" method="post" name="word" id="search">{% csrf_token %}
+                                    
+                                    {{ form }}
+                                    <input type="text" name="word" size="1000" placeholder="Search..." />
+                                    
+                                    
                                 </form>
+                            <!--    <form method="get" action="/" id="search">
+                                    <input name="q" type="text" size="500" placeholder="Search..." />
+                                </form> -->
                             </div>
 
                         </section>
@@ -205,7 +208,7 @@
                         </div>
                         <button>Login</button>
                         <h5></h5>
-                        <a href="/auth/facebook" class="btn btn-facebook btn-lg btn-block">Sign in with Facebook</a>
+                        <a id="my-login-button" class="btn btn-facebook btn-lg btn-block">Sign in with Facebook</a>
                     </form>
                     <h3></h3>
                 </div>
@@ -238,6 +241,23 @@
         };
         gitbook.start(config);
     });
+    </script>
+    <script id="my-script-playground">
+        window.fbLoaded = function(){
+            // define the events when login status changed.
+            FB.Event.subscribe('auth.login', function(response) {
+                // when user has been logged in, this block will be triggered.
+                var msg = "You're logged in.";
+                $("#my-login-message").html(msg);
+                console.log("Your login response:");
+                console.log(response);
+            });
+
+            // define the action when user clicked the login button.
+            $("#my-login-button").click(function(){
+                FB.login();
+            });
+        };
     </script>
 </body>
 </html>

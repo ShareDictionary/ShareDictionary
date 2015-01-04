@@ -18,8 +18,8 @@ urlpatterns = patterns('',
 
     url(r'^admin/$', include(admin.site.urls)),
     
-    url(r'^$', views.show_index),
-
+    url(r'^$', views.search),
+    url(r'^search', views.search),
     url(r'^facebook/$', views.facebook_login),
     #url(r'', include('social.apps.django_app.urls', namespace='social')),
    

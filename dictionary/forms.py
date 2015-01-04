@@ -6,6 +6,9 @@ class WordForm(forms.ModelForm):
     class Meta:
         model = Vocabulary
         fields = ('word', 'description', 'sentence', 'video',)
+
+class SearchForm(forms.Form):
+    class Meta:
+        model = Vocabulary
+        fields = ('word',)
         
-#12345
-#6789
