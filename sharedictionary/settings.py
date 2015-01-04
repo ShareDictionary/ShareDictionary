@@ -102,17 +102,6 @@ TEMPLATE_CONTEXT_PROCESSORS= (
   
     )
 
-#STATICFILES_FINDERS = (
- #   'django.contrib.staticfiles.finders.FileSystemFinder',
- #   'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
-#)
-
-
-   # 'social.apps.django_app.context_processors.backends',
-   # 'social.apps.django_app.context_processors.login_redirect',
-
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     '/static/'
@@ -170,11 +159,4 @@ SOCIAL_AUTH_URL_NAMESPACE = 'social'
 SOCIAL_AUTH_RAISE_EXCEPTIONS = True
 RAISE_EXCEPTIONS = True
 DEBUG = True
-
-
-SOCIAL_AUTH_FACEBOOK_KEY = '686275314821464'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'fc51fa0bca0b957fcabae34d4a28fe52'
-FACEBOOK_APP_ID = '686275314821464'
-FACEBOOK_API_SECRET = 'fc51fa0bca0b957fcabae34d4a28fe52'
-
 

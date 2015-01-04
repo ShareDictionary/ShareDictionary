@@ -5,16 +5,17 @@
 
 
 {% block content %}
-
+    
+    {% for vocabulary in vocabulary %}
               <div id="object">
-                            <div class="page-inner container">
+                            <div class="page-inner container" style="margin-top:20px">
                                 <div class="row">
                                     <div class="col-md-1" id="left">
                                         <ul>
                                             <li>
                                                 <a class="glyphicon glyphicon-chevron-up" id="button-up"></a>
                                             </li>
-                                            <li><span class="counter">vocabulary.likes</span>
+                                            <li><span class="counter">{{ vocabulary.likes }}</span>
                                             </li>
                                             <li>
                                                 <a class="glyphicon glyphicon-chevron-down" id="button-down"></a>
@@ -58,6 +59,6 @@
                             </div>
                         </div>
 
-    
+    {% endfor %}
 {% endblock content %}
 
