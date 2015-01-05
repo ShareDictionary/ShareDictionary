@@ -41,6 +41,9 @@ def search(request):
         
        
     return render(request, 'dictionary/base.html', {'form': form})
+
+def error(request):
+    return render(request, 'dictionary/404.html', {})
     
 
 

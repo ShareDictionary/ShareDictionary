@@ -121,23 +121,6 @@
                     </a>
                     <div class="dropdown pull-right">
                         <h4></h4>
-                        <!--span>
-                    <h4><a href="#" id="loginform">Login</a></h4>
-                    <div class="login">
-                      <div class="arrow-up"></div>
-                      <div class="formholder">
-                        <div class="randompad">
-                           <fieldset>
-                             <label name="email">Email</label>
-                             <input type="email" value="example@example.com" />
-                             <label name="password">Password</label>
-                             <input type="password" />
-                             <input type="submit" value="Login" />
-                           </fieldset>
-                        </div>
-                      </div>
-                    </div>
-                    </span-->
                         <a data-toggle="modal" href="#myModal">
                             <button type="button" class="btn">Login</button>
                         </a>
@@ -171,7 +154,7 @@
                         {% endblock content %}
 
 
-                        <div class="page-inner container">
+                        <div class="page-inner container" style="margin:20px">
 
 						<form class="form-horizontal">
 						    <div class="form-group">
@@ -198,7 +181,7 @@
                                 <div class="col-sm-6">
                                     <input  class="form-control" id="videoaddr" placeholder="http://your_video_address">
                                 </div>
-                                <span><button class="col-sm-2 btnadd">Preview</button></span>
+                                <span><button class="btnadd" id="loadvideo">Preview</button></span>
                             </div>
                             
     
@@ -211,7 +194,7 @@
                             
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-8">
-                                  <button type="submit" class="btn">Add</button>
+                                  <button type="submit" class="btnadd">Add</button>
                                 </div>
                               </div>
                         </form>
@@ -222,7 +205,7 @@
                     </div>
                 </div>
             </div>
-            <a href="./chapter1/chapter1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 欢迎使用 Swift" style="margin-right: 0px;"><img src="{% static "image/next15.png" %}">
+            <a href="./error" class="navigation navigation-next navigation-unique" aria-label="Next page" style="margin-right: 2px;"><img src="{% static "image/next15.png" %}">
             </a>
         </div>
 
@@ -255,7 +238,7 @@
                                 <input type="password" placeholder="Password">
                             </div>
                         </div>
-                        <button>Login</button>
+                        <button style="margin-top:20px">Login</button>
                         <h5></h5>
                         <a id="my-login-button" class="btn btn-facebook btn-lg btn-block">Sign in with Facebook</a>
                     </form>
@@ -290,6 +273,17 @@
         };
         gitbook.start(config);
     });
+    window.onload = function() {
+  document.getElementById("loadvideo").onclick = loadVideo;
+};
+function loadVideo() {
+  var videoaddr = document.getElementById("videoaddr");
+  alert(videoaddr.value);
+  var video= document.getElementById("showvideo");
+  video.src="https://www.youtube.com/watch?v=qHm9MG9xw1o";
+  alert(video.src);
+
+}
     </script>
     <script id="my-script-playground">
         window.fbLoaded = function(){

@@ -2,10 +2,10 @@
 display: inline-block;
 padding: 6px 12px;
 margin-bottom: 0;
-font-size: 12px;
+font-size: 14px;
 font-weight: 400;
 line-height: 1.42857143;
-width:70px;
+width:115px;
 text-align: center;
 white-space: nowrap;
 vertical-align: middle;
@@ -107,7 +107,7 @@ form{
 .container{
 	background-color:#F0F0F0;
 	width: 60%;
-	padding-top: 15px;
+
 }
 
 .counter{
