@@ -100,9 +100,6 @@ TEMPLATE_CONTEXT_PROCESSORS= (
 
     #this is for youtube embed
     'django.core.context_processors.request',
-
-    'social.apps.django_app.context_processors.backends',
-    'social.apps.django_app.context_processors.login_redirect',
   
     )
 
