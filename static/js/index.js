@@ -8,6 +8,10 @@ $('input[type="submit"]').mouseup(function(){
 $('#loginform').click(function(){
   $('.login').fadeToggle('slow');
   $(this).toggleClass('green');
+<<<<<<< HEAD
+  
+=======
+>>>>>>> 672ccb6d49405b51c3b108e1631c85dec5a84aff
 });
 
 
@@ -22,4 +26,9 @@ $(document).mouseup(function (e)
         container.hide();
         $('#loginform').removeClass('green');
     }
+<<<<<<< HEAD
 });
+
+=======
+});
+>>>>>>> 672ccb6d49405b51c3b108e1631c85dec5a84aff

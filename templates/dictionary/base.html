@@ -1,0 +1,319 @@
+{% load staticfiles %}
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+    <title>ShareDictionary </title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="Hi there! Welcome to Cloud9 IDE!">
+    <meta name="generator" content="GitBook 1.4.2">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--link rel="stylesheet" href="/static/css/loginstyle.css" media="screen" type="text/css" /-->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="media/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../media/icon.png" type="/media/x-icon">
+
+    <link rel="stylesheet" href="../../static/css/styleapp.css">
+    <link rel="stylesheet" href="../../static/css/style.css">
+
+
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="../../static/css/MyLoginStyle.css">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+    <script src="../../static/js/index.js"></script>
+
+
+
+</head>
+
+<body>
+    <!-- BLOCK: FB SDK initialization -->
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+        // init the FB JS SDK
+        FB.init({
+        appId      : 821388711240155,                        // App ID from the app dashboard
+        cookie     : true,                                 // Allowed server-side to fetch fb auth cookie
+        status     : true,                                 // Check Facebook Login status
+        xfbml      : true                                  // Look for social plugins on the page
+        });
+
+        // Additional initialization code such as adding Event Listeners goes here
+        window.fbLoaded();
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        //js.src = "//connect.facebook.net/en_US/all.js";
+        // Debug version of Facebook JS SDK
+        js.src = "https://connect.facebook.net/en_US/all/debug.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- ENDBLOCK: FB SDK initialization -->
+
+<div id="status">
+</div>
+    <div class="book" data-level="0" data-basepath="." data-revision="1418628508539">
+        <div class="book-summary">
+            <ul class="summary">
+                <li class="chapter active" data-level="0" data-path="index.html">
+                    <a href="./index.html">
+                            
+                             Welcome <strong>user</strong>
+                        </a>
+                </li>
+                <li class="divider"></li>
+                <li><strong>&nbsp; Contributor of the Day</strong>
+                </li>
+
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=100000440338175" target="blank" class="gitbook-link"><b>1. </b>Mia</a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=100002578523190&fref=ts" target="blank" class="gitbook-link"><b>2. </b>Tom</a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=1733400486&fref=ts" target="blank" class="gitbook-link"><b>3. </b>Danffer</a>
+                </li>
+
+                <li class="divider"></li>
+                <li><strong>&nbsp; Contributor of the Month</strong>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=100000440338175" target="blank" class="gitbook-link"><b>1. </b>Mia</a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=100002578523190&fref=ts" target="blank" class="gitbook-link"><b>2. </b>Tom</a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=1733400486&fref=ts" target="blank" class="gitbook-link"><b>3. </b>Danffer</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="book-body">
+            <div class="body-inner">
+                <div class="book-header">
+                    <!-- Actions Left -->
+
+                    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><img src="{% static "image/list23.png" %}">
+                    </a>
+                    <div class="dropdown pull-right">
+                        <h4></h4>
+                        <!--span>
+                    <h4><a href="#" id="loginform">Login</a></h4>
+                    <div class="login">
+                      <div class="arrow-up"></div>
+                      <div class="formholder">
+                        <div class="randompad">
+                           <fieldset>
+                             <label name="email">Email</label>
+                             <input type="email" value="example@example.com" />
+                             <label name="password">Password</label>
+                             <input type="password" />
+                             <input type="submit" value="Login" />
+                           </fieldset>
+                        </div>
+                      </div>
+                    </div>
+                    </span-->
+                        <a data-toggle="modal" href="#myModal">
+                            <button type="button" class="btn">Login</button>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="page-wrapper" tabindex="-1">
+                    <div class="page-inner">
+                        <section class="normal" id="section-gitbook_1">
+                            <div 
+                                align="center"><img src="{% static "image/logo.png" %}">
+                            </div>
+                            <div align="center">
+                                <form action="/" method="post" name="word" id="search">{% csrf_token %}
+                                    
+                                    {{ form }}
+                                    <input type="text" name="word" size="1000" placeholder="Search..." />
+                                    
+                                    
+                                </form>
+                            <!--    <form method="get" action="/" id="search">
+                                    <input name="q" type="text" size="500" placeholder="Search..." />
+                                </form> -->
+                            </div>
+
+                        </section>
+                        <br>
+
+                        {% block content %}
+                        {% endblock content %}
+
+
+                        <div class="page-inner container">
+
+						<form class="form-horizontal">
+						    <div class="form-group">
+                                <label  class="col-sm-2 control-label">Word</label>
+                                <div class="col-sm-8">
+                                  <input  class="form-control" placeholder="Word">
+                                </div>
+                              </div>
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Definition</label>
+                                <div class="col-sm-8">
+                                    <input  class="form-control" placeholder="Definition">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Example</label>
+                                <div class="col-sm-8">
+                                    <input  class="form-control" placeholder="Give an example">
+                                </div>
+                            </div>
+  
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Video</label>
+                                <div class="col-sm-6">
+                                    <input  class="form-control" id="videoaddr" placeholder="http://your_video_address">
+                                </div>
+                                <span><button class="col-sm-2 btnadd">Preview</button></span>
+                            </div>
+                            
+    
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label"></label>
+                                <div class="col-sm-8">
+                                <iframe width="512" height="288" id="showvideo" src="//www.youtube.com/embed/sfNsw9zTsqk" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                </div>
+                            
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-8">
+                                  <button type="submit" class="btn">Add</button>
+                                </div>
+                              </div>
+                        </form>
+
+					</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <a href="./chapter1/chapter1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 欢迎使用 Swift" style="margin-right: 0px;"><img src="{% static "image/next15.png" %}">
+            </a>
+        </div>
+
+        <!--modal-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" height="500" width="400">
+            <div class="modal-dialog">
+                <!--
+            <div class="modal-content">
+            <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">Testing Modal</h4>
+            </div>
+            <div class="modal-body">
+            -->
+                <div class="ribbon"></div>
+                <div class="login2">
+                    <h1>Login</h1>
+                    <p>This will be an amazing experience</p>
+                    <form action="login" -->
+                        <div class="input">
+                            <div class="blockinput">
+                                <i class="icon-envelope-alt"></i>
+                                <input type="mail" placeholder="Email">
+                            </div>
+                        </div>
+                        <h4></h4>
+                        <div class="input">
+                            <div class="blockinput">
+                                <i class="icon-unlock"></i>
+                                <input type="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <button>Login</button>
+                        <h5></h5>
+                        <a id="my-login-button" class="btn btn-facebook btn-lg btn-block">Sign in with Facebook</a>
+                    </form>
+                    <h3></h3>
+                </div>
+                <hr>
+                <!--/div><!-- /.modal-body -->
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+
+
+    <script src="/static/js/index.js"></script>
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/app2.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="/static/js/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    <script src="/static/js/plugins/gitbook-plugin-livereload/plugin.js"></script>
+
+    <script>
+    require(["gitbook"], function(gitbook) {
+        var config = {
+            "fontSettings": {
+                "theme": null,
+                "family": "sans",
+                "size": 2
+            }
+        };
+        gitbook.start(config);
+    });
+    </script>
+    <script id="my-script-playground">
+        window.fbLoaded = function(){
+            // define the events when login status changed.
+            FB.Event.subscribe('auth.login', function(response) {
+                // when user has been logged in, this block will be triggered.
+                var msg = "You're logged in.";
+                $("#my-login-message").html(msg);
+                console.log("Your login response:");
+                console.log(response);
+            });
+
+            // define the action when user clicked the login button.
+            $("#my-login-button").click(function(){
+                FB.login();
+            });
+        };
+    </script>
+</body>
+</html>
+<!-- test -->
+<!-- test -->
+<!-- test -->
+<!-- test -->
+<!-- test -->
+<!-- test -->
+</html>

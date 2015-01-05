@@ -49,8 +49,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dictionary',
-    #'social.apps.django_app.default',
-    'thirdauth',
+    
+    'embed_video',
+
     
 
 
@@ -96,8 +97,12 @@ TEMPLATE_CONTEXT_PROCESSORS= (
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
-   # 'social.apps.django_app.context_processors.backends',
-   # 'social.apps.django_app.context_processors.login_redirect',
+
+    #this is for youtube embed
+    'django.core.context_processors.request',
+
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
   
     )
 
@@ -107,7 +112,8 @@ STATICFILES_DIRS = (
 )
 
 AUTHENTICATION_BACKENDS = (
-   #'social.backends.facebook.FacebookOAuth2',
+
+   'social.backends.facebook.FacebookOAuth2',
    
    'django.contrib.auth.backends.ModelBackend',
 )
@@ -133,23 +139,51 @@ USE_TZ = True
 
 
 # media files
-MEDIA_ROOT = os.path.join(PROJECT_DIR, '/media/')
-MEDIA_URL = '/media/'
+#MEDIA_ROOT = '/media/'
+
+MEDIA_PATH='/sharedictionary/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media').replace('\\', '/')
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.6/howto/static-files/
 STATIC_PATH='/static/'
-MEDIA_PATH='/media/'
+STATIC_URL = '/static/'
+
+
+
+ADMIN_MEDIA_PREFIX = '/media/admin/'
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/login/'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 SOCIAL_AUTH_RAISE_EXCEPTIONS = True
 RAISE_EXCEPTIONS = True
 DEBUG = True
 
-
-SOCIAL_AUTH_FACEBOOK_KEY = '686275314821464'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'fc51fa0bca0b957fcabae34d4a28fe52'
-FACEBOOK_APP_ID = '686275314821464'
-FACEBOOK_API_SECRET = 'fc51fa0bca0b957fcabae34d4a28fe52'
-
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    }
+}

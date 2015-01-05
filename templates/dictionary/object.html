@@ -1,0 +1,69 @@
+
+{% extends 'dictionary/base.html' %}
+{% load staticfiles %}
+{% load embed_video_tags %}
+
+
+{% block content %}
+
+    
+    {% for vocabulary in vocabulary %}
+              <div id="object">
+                            <div class="page-inner container" style="margin-top:20px">
+                                <div class="row">
+                                    <div class="col-md-1" id="left">
+                                        <ul>
+                                            <li>
+                                                <a class="glyphicon glyphicon-chevron-up" id="button-up"></a>
+                                            </li>
+                                            <li><span class="counter">{{ vocabulary.likes }}</span>
+                                            </li>
+                                            <li>
+                                                <a class="glyphicon glyphicon-chevron-down" id="button-down"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-md-9" id="middle-left">
+
+                                        <form id="word">
+                                            <div>
+                                                <a class="form-control status-box" rows="2">{{ vocabulary.word }}</a>
+                                            </div>
+                                        </form>
+
+                                        <form id="explain">
+                                            <div>
+                                                <a class="form-control status-box" rows="2">{{ vocabulary.description }}</a>
+                                            </div>
+                                        </form>
+
+                                        <form id: "sentance">
+                                            <div>
+                                                <a class="form-control status-box" rows="2">{{ vocabulary.sentence }}</a>
+                                            </div>
+                                        </form>
+                                        
+                                        {% video vocabulary.video as my_video %}
+                                        
+                                           {% video my_video '600x400' %}
+                                           
+                                        {% endvideo %}
+    
+                                        </object>
+
+                                    </div>
+
+                                    <div class="col-md-2" id="middle-right">
+                                        <a class="glyphicon glyphicon-plus" id="plus"></a>
+                                        <img src="{% static "image/facebook.png" %}" id="facebookImage">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+    {% endfor %}
+{% endblock content %}
+

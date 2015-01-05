@@ -6,6 +6,6 @@ from django import forms
 
 admin.site.register(Vocabulary)
 
-class LoginForm(forms.Form):
-	email = forms.CharField(max_length=30)
-	password = forms.CharField(widget = forms.PasswordInput)
+#class LoginForm(forms.Form):
+#	email = forms.CharField(max_length=30)
+#	password = forms.CharField(widget = forms.PasswordInput)
