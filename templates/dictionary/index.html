@@ -86,23 +86,6 @@
                 
                 <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><img src="../../media/list23.png"></a>
                 <div class="dropdown pull-right"><h4></h4>
-                    <!--span>
-                    <h4><a href="#" id="loginform">Login</a></h4>
-                    <div class="login">
-                      <div class="arrow-up"></div>
-                      <div class="formholder">
-                        <div class="randompad">
-                           <fieldset>
-                             <label name="email">Email</label>
-                             <input type="email" value="example@example.com" />
-                             <label name="password">Password</label>
-                             <input type="password" />
-                             <input type="submit" value="Login" />
-                           </fieldset>
-                        </div>
-                      </div>
-                    </div>
-                    </span-->
                     <a data-toggle="modal" href="#myModal"><button type="button" class="btn">Login</button></a>
                 </div>
                 
@@ -119,20 +102,21 @@
                         </div>
                         
                     </section><br>
-                    
-                <div id="object">
-        		<div class="page-inner container">
+                
+
+                                    
+        <div id="object">
+        	<div class="page-inner container">
                 <div class="row">
 					<div class="col-md-1" id="left">
 						<ul>
 							<li><a class="glyphicon glyphicon-chevron-up" id="button-up"></a></li>
 							<li><span class="counter">0</span></li>
-							<li><a class="glyphicon glyphicon-chevron-down" id="button-down"></a></li>
+    						<li><a class="glyphicon glyphicon-chevron-down" id="button-down"></a></li>
 						</ul>
 					</div>
 								
 					<div class="col-md-9" id="middle-left">
-						
 						<form id="word">
 			        		<div>
 			          			<a class="form-control status-box" rows="2">present</a>
@@ -163,14 +147,63 @@
 					</div>
 
 				</div>
-			
-		</div>		
-	</div>
+    		</div>		
+    	</div><br>
+	
+
+        	<div class="page-inner container">
+
+						<form class="form-horizontal">
+						    <div class="form-group">
+                                <label  class="col-sm-2 control-label">Word</label>
+                                <div class="col-sm-8">
+                                  <input  class="form-control" placeholder="Word">
+                                </div>
+                              </div>
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Definition</label>
+                                <div class="col-sm-8">
+                                    <input  class="form-control" placeholder="Definition">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Example</label>
+                                <div class="col-sm-8">
+                                    <input  class="form-control" placeholder="Give an example">
+                                </div>
+                            </div>
+  
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Video</label>
+                                <div class="col-sm-6">
+                                    <input  class="form-control" id="videoaddr" placeholder="http://your_video_address">
+                                </div>
+                                <span><button class="col-sm-2 btnadd">Preview</button></span>
+                            </div>
+                            
+    
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label"></label>
+                                <div class="col-sm-8">
+                                <iframe width="512" height="288" id="showvideo" src="//www.youtube.com/embed/sfNsw9zTsqk" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                </div>
+                            
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-8">
+                                  <button type="submit" class="btn">Add</button>
+                                </div>
+                              </div>
+                        </form>
+
+					</div>
+
+
                     
                 </div>
             </div>
         </div>
-        <a href="./chapter1/chapter1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 欢迎使用 Swift" style="margin-right: 0px;"><img src="images/next15.png"></a>
+        <a href="./chapter1/chapter1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 欢迎使用 Swift" style="margin-right: 0px;"><img src="../../media/next15.png"></a>
     </div>
 
         <!--modal-->
@@ -210,13 +243,13 @@
         </div><!-- /.modal -->
  
  
+        <script src="../../static/js/app2.js"></script>
+        <script src="../../static/js/index.js"></script>     
+        <script src="../../static/js/app.js"></script>
 
-        <script src="/static/js/index.js"></script>     
-        <script src="/static/js/app.js"></script>
-        <script src="/static/js/app2.js"></script>
         <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script src="/static/js/plugins/gitbook-plugin-mathjax/plugin.js"></script>
-        <script src="/static/js/plugins/gitbook-plugin-livereload/plugin.js"></script>
+        <script src="../../static/js/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+        <script src="../../static/js/plugins/gitbook-plugin-livereload/plugin.js"></script>
         
         <script>
         require(["gitbook"], function(gitbook) {

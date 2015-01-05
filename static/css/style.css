@@ -2292,7 +2292,7 @@ table {
 }
 .book .book-body .page-wrapper .page-inner section {
     margin: 0;
-    padding: 5px 15px;
+    padding: 5px 5px;
     background: #fff;
     border-radius: 2px;
     line-height: 1.6;
