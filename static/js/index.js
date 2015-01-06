@@ -1,13 +1,4 @@
-window.onload = function() {
-  document.getElementById("loadvideo").onclick = loadVideo;
-};
-function loadVideo() {
-alert("zxc");
-  var videoaddr = document.getElementById("videoaddr");
-  var video= document.getElementById("showvideo");
-  video.src="https://www.youtube.com/watch?v=qHm9MG9xw1o";
 
-}
 
 
  
@@ -22,10 +13,7 @@ $('input[type="submit"]').mouseup(function(){
 $('#loginform').click(function(){
   $('.login').fadeToggle('slow');
   $(this).toggleClass('green');
-<<<<<<< HEAD
-  
-=======
->>>>>>> 672ccb6d49405b51c3b108e1631c85dec5a84aff
+
 });
 
 
@@ -40,9 +28,6 @@ $(document).mouseup(function (e)
         container.hide();
         $('#loginform').removeClass('green');
     }
-<<<<<<< HEAD
+
 });
 
-=======
-});
->>>>>>> 672ccb6d49405b51c3b108e1631c85dec5a84aff

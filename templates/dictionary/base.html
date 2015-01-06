@@ -34,7 +34,6 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
-    <script src="../../static/js/index.js"></script>
 
 
 
@@ -181,13 +180,13 @@
                                 <div class="col-sm-6">
                                     <input  class="form-control" id="videoaddr" placeholder="http://your_video_address">
                                 </div>
-                                <span><button class="btnadd" id="loadvideo">Preview</button></span>
+                                <span><button class="btnadd" id="loadvideo" onClick="loadVideo();">Preview</button></span>
                             </div>
                             
     
                             <div class="form-group">
                                 <label  class="col-sm-2 control-label"></label>
-                                <div class="col-sm-8">
+                                <div class="col-sm-8" id="video_frame">
                                 <iframe width="512" height="288" id="showvideo" src="//www.youtube.com/embed/sfNsw9zTsqk" frameborder="0" allowfullscreen></iframe>
                                 </div>
                                 </div>
@@ -273,16 +272,8 @@
         };
         gitbook.start(config);
     });
-    window.onload = function() {
-  document.getElementById("loadvideo").onclick = loadVideo;
-};
 function loadVideo() {
-  var videoaddr = document.getElementById("videoaddr");
-  alert(videoaddr.value);
-  var video= document.getElementById("showvideo");
-  video.src="https://www.youtube.com/watch?v=qHm9MG9xw1o";
-  alert(video.src);
-
+    document.getElementById("showvideo").src =document.getElementById("videoaddr").value;
 }
     </script>
     <script id="my-script-playground">
