@@ -57,6 +57,23 @@
                                     <div class="col-md-2" id="middle-right">
                                         <a class="glyphicon glyphicon-plus" id="plus"></a>
                                         <img src="{% static "image/facebook.png" %}" id="facebookImage">
+                                        <script type="text/javascript">
+                                        $(document).ready(function(){
+                                        $('#facebookImage').click(function(e){
+                                        e.preventDefault();
+                                        FB.ui(
+                                        {
+                                        method: 'feed',
+                                        name: 'ShareDictionary',
+                                        link: ' https://sharedictionary-tom8u4286-1.c9.io/',
+                                        picture: 'https://sharedictionary-tom8u4286-1.c9.io/static/image/logo.png',
+                                        caption: 'This is the content of the "caption" field.',
+                                        description: 'This is the content of the "description" field.',
+                                        message: ''
+                                        });
+                                        });
+                                        });
+                                        </script>
                                     </div>
 
                                 </div>
