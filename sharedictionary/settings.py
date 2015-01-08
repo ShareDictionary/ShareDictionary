@@ -108,12 +108,7 @@ STATICFILES_DIRS = (
     '/static/'
 )
 
-AUTHENTICATION_BACKENDS = (
 
-   'social.backends.facebook.FacebookOAuth2',
-   
-   'django.contrib.auth.backends.ModelBackend',
-)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
