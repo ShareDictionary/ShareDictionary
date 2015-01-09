@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="../../static/css/styleapp.css">
     <link rel="stylesheet" href="../../static/css/style.css">
+    
 
 
     <!-- Latest compiled and minified CSS -->
@@ -31,51 +32,26 @@
 
     <link rel="stylesheet" href="../../static/css/MyLoginStyle.css">
 
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+    
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/app2.js"></script>
 
 
 
 </head>
 
 <body>
-    <!-- BLOCK: FB SDK initialization -->
-    <div id="fb-root"></div>
-    <script>
-    window.fbAsyncInit = function() {
-        // init the FB JS SDK
-        FB.init({
-        appId      : 821388711240155,                        // App ID from the app dashboard
-        cookie     : true,                                 // Allowed server-side to fetch fb auth cookie
-        status     : true,                                 // Check Facebook Login status
-        xfbml      : true                                  // Look for social plugins on the page
-        });
-
-        // Additional initialization code such as adding Event Listeners goes here
-        window.fbLoaded();
-    };
-
-    // Load the SDK asynchronously
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        //js.src = "//connect.facebook.net/en_US/all.js";
-        // Debug version of Facebook JS SDK
-        js.src = "https://connect.facebook.net/en_US/all/debug.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <!-- ENDBLOCK: FB SDK initialization -->
-
+<script src="/static/js/fbsdk.js"></script>
 <div id="status">
 </div>
     <div class="book" data-level="0" data-basepath="." data-revision="1418628508539">
         <div class="book-summary">
             <ul class="summary">
                 <li class="chapter active" data-level="0" data-path="index.html">
-                    <a href="./index.html">
+                    <a href="./index.html" id="welcome" >
                              Welcome <strong>user</strong>
                     </a>
                 </li>
@@ -105,7 +81,28 @@
                 <li>
                     <a href="https://www.facebook.com/profile.php?id=1733400486&fref=ts" target="blank" class="gitbook-link"><b>3. </b>Danffer</a>
                 </li>
+                <li>
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd id="my-profile-name"></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Gender</dt>
+                        <dd id="my-profile-gender"></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Username</dt>
+                        <dd id="my-profile-username"></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Facebook ID</dt>
+                        <dd id="my-profile-facebook-id"></dd>
+                    </dl>
+                </li>
             </ul>
+            
+            
+            
         </div>
 
 
@@ -253,13 +250,11 @@
 
 
 
-    <script src="/static/js/index.js"></script>
-    <script src="/static/js/app.js"></script>
-    <script src="/static/js/app2.js"></script>
+    
     <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="/static/js/plugins/gitbook-plugin-mathjax/plugin.js"></script>
     <script src="/static/js/plugins/gitbook-plugin-livereload/plugin.js"></script>
-
+    <script src="/static/js/index.js"></script>
     <script>
     require(["gitbook"], function(gitbook) {
         var config = {
@@ -271,26 +266,9 @@
         };
         gitbook.start(config);
     });
-function loadVideo() {
-    document.getElementById("showvideo").src =document.getElementById("videoaddr").value;
-}
-    </script>
-    <script id="my-script-playground">
-        window.fbLoaded = function(){
-            // define the events when login status changed.
-            FB.Event.subscribe('auth.login', function(response) {
-                // when user has been logged in, this block will be triggered.
-                var msg = "You're logged in.";
-                $("#my-login-message").html(msg);
-                console.log("Your login response:");
-                console.log(response);
-            });
-
-            // define the action when user clicked the login button.
-            $("#my-login-button").click(function(){
-                FB.login();
-            });
-        };
+    function loadVideo() {
+        document.getElementById("showvideo").src =document.getElementById("videoaddr").value;
+    }
     </script>
 </body>
 </html>

@@ -1,8 +1,3 @@
-
-
-
- 
-
 $('input[type="submit"]').mousedown(function(){
   $(this).css('background', '#2ecc71');
 });
@@ -30,4 +25,8 @@ $(document).mouseup(function (e)
     }
 
 });
+
+
+
+
 
