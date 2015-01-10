@@ -42,14 +42,12 @@
         };
         var fetch_my_profile = function () {
         FB.api('/me', function(response) {
-            var my_name = response.name;
+            var my_first_name = response.first_name;
             var my_gender = response.gender;
-            var my_username = response.username;
+            var my_username = response.last_name;
             var my_facebook_id = response.id;
     
-            $("#my-profile-name").html(my_name);
-            $("#my-profile-gender").html(my_gender);
-            $("#my-profile-username").html(my_username);
+            $("#my-profile-name").html(my_first_name);
             $("#my-profile-facebook-id").html(my_facebook_id);
         });
     

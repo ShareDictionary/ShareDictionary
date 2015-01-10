@@ -2264,8 +2264,9 @@ table {
     left: 0;
     bottom: 0;
     margin-top:3px;
-    margin-right:30px;
-    overflow-y: auto;
+    margin-right:0px;
+    /*overflow: hidden;*/
+    /*overflow-y: auto;*/
     color: #000;
     background: #fff;
     -webkit-transition: left 250ms ease;
