@@ -10,6 +10,7 @@
 
         // Additional initialization code such as adding Event Listeners goes here
         window.fbLoaded();
+        check_FB_login();
     };
 
     // Load the SDK asynchronously
@@ -40,22 +41,35 @@
                 FB.login();
             });
         };
-        var fetch_my_profile = function () {
+    var fetch_my_profile = function () {
         FB.api('/me', function(response) {
-            var my_name = response.name;
+            var my_first_name = response.first_name;
             var my_gender = response.gender;
-            var my_username = response.username;
+            var my_username = response.last_name;
             var my_facebook_id = response.id;
-    
-            $("#my-profile-name").html(my_name);
-            $("#my-profile-gender").html(my_gender);
-            $("#my-profile-username").html(my_username);
+        
+            $("#my-profile-name").html(my_first_name);
             $("#my-profile-facebook-id").html(my_facebook_id);
         });
-    
+        
         FB.api('/me/picture', function(response) {
             var my_picture_url = response.data.url;
-    
             $("#my-profile-picture").attr('src', my_picture_url);
-    });
-};
+        });
+    };
+    
+    var check_FB_login = function(){
+        FB.getLoginStatus(function(response) {
+          if (response.status === 'connected') {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token 
+            // and signed request each expire
+            var uid = response.authResponse.userID;
+            var accessToken = response.authResponse.accessToken;
+            
+            fetch_my_profile();
+          }
+        });
+    }
