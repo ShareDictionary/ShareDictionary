@@ -72,12 +72,12 @@ def search(request, word):
        
         return render(request, 'dictionary/base.html', {'form': form})
     else:
-        if word =null:
+        if word:
+            word = word.replace('/','');
+            vocabulary = Vocabulary.objects.filter(word = word).order_by('likes')
+            return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
+        else:
             return render(request, 'dictionary/base.html',)
-        word = word.replace('/','');
-        vocabulary = Vocabulary.objects.filter(word = word).order_by('likes')
-        return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
-
 def error(request):
     return render(request, 'dictionary/404.html', {})
     
