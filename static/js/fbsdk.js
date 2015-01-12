@@ -39,6 +39,7 @@
             // define the action when user clicked the login button.
             $("#my-login-button").click(function(){
                 FB.login();
+                fetch_my_profile();
             });
         };
     var fetch_my_profile = function () {
@@ -73,3 +74,4 @@
           }
         });
     }
+    

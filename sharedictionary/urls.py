@@ -18,7 +18,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     
-    url(r'^', views.search),
+    url(r'^$', views.search),
     #url(r'^', views.create_word),
     url(r'^error$', views.error),
     url(r'^search', views.search),
