@@ -72,6 +72,8 @@ def search(request, word):
        
         return render(request, 'dictionary/base.html', {'form': form})
     else:
+        if word =null:
+            return render(request, 'dictionary/base.html',)
         word = word.replace('/','');
         vocabulary = Vocabulary.objects.filter(word = word).order_by('likes')
         return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
