@@ -50,25 +50,26 @@
 
                                     <div class="col-md-2" align="center" id="middle-right">
                                         <a class="glyphicon glyphicon-plus" style="font-size:30px" id="plus"></a>
-                                        <a href="#"><img src="{% static "image/facebook.png" %}" style="margin-left:5px" class="facebookImage" id="facebookImage"></a>
+                                        <img src="{% static "image/facebook.png" %}" style="margin-left:5px" id="facebookImage" onclick="share2()">
                                         <script type="text/javascript">
-                                        $(document).ready(function(){
-                                        $('#facebookImage').click(function(e){
-                                        e.preventDefault();
-                                        FB.ui(
-                                        {
-                                        method: 'feed',
-                                        name: 'ShareDictionary',
-                                        display: "popup",
-                                        link: ' https://sharedictionary-tom8u4286-1.c9.io/',
-                                        picture: 'https://sharedictionary-tom8u4286-1.c9.io/static/image/logo.png',
-                                        caption: 'This is the content of the "caption" field.',
-                                        description: ["{{ vocabulary.word }}\b",
+                                        function share(){
+                                            $('#facebookImage').click(function(e){
+                                                console.log("Inside the functon:");
+                                                e.preventDefault();
+                                                FB.ui(
+                                                {
+                                                    method: 'feed',
+                                                    name: 'ShareDictionary',
+                                                    display: "popup",
+                                                    link: ' https://sharedictionary-tom8u4286-1.c9.io/',
+                                                    picture: 'https://sharedictionary-tom8u4286-1.c9.io/static/image/logo.png',
+                                                    caption: 'This is the content of the "caption" field.',
+                                                    description: ["{{ vocabulary.word }}\b",
                                                     "{{ vocabulary.description }}\b",
                                                     "{{vocabulary.sentence}}"]
-                                        });
-                                        });
-                                        });
+                                                });
+                                            });
+                                            }
                                         </script>
                                     </div>
                                     <div class="col-md-12" style="padding:5px; padding-right:30px" align="right">

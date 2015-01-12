@@ -18,8 +18,10 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     
+
     url(r'^create$', views.create_word),
     url(r'^(?P<word>.*)$', views.search),
+
     url(r'^error$', views.error),
     url(r'^search', views.searchRedirect),
     url(r'^facebook/$', views.facebook_login),
