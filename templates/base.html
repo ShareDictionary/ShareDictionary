@@ -21,7 +21,6 @@
 
     <link rel="stylesheet" href="../../static/css/styleapp.css">
     <link rel="stylesheet" href="../../static/css/style.css">
-    
 
 
     <!-- Latest compiled and minified CSS -->
@@ -30,34 +29,57 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 
-    
+    <link rel="stylesheet" href="../../static/css/MyLoginStyle.css">
 
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
-    
-    <script src="/static/js/app.js"></script>
-    <script src="/static/js/app2.js"></script>
 
-    
+
 
 </head>
 
 <body>
-<script src="/static/js/fbsdk.js"></script>
+    <!-- BLOCK: FB SDK initialization -->
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+        // init the FB JS SDK
+        FB.init({
+        appId      : 821388711240155,                        // App ID from the app dashboard
+        cookie     : true,                                 // Allowed server-side to fetch fb auth cookie
+        status     : true,                                 // Check Facebook Login status
+        xfbml      : true                                  // Look for social plugins on the page
+        });
+
+        // Additional initialization code such as adding Event Listeners goes here
+        window.fbLoaded();
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        //js.src = "//connect.facebook.net/en_US/all.js";
+        // Debug version of Facebook JS SDK
+        js.src = "https://connect.facebook.net/en_US/all/debug.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- ENDBLOCK: FB SDK initialization -->
+
 <div id="status">
 </div>
     <div class="book" data-level="0" data-basepath="." data-revision="1418628508539">
         <div class="book-summary">
             <ul class="summary">
-                
                 <li class="chapter active" data-level="0" data-path="index.html">
-                    <a href="./index.html" id="welcome"><img id="my-profile-picture">Welcome <u id="my-profile-name"></u></a>
+                    <a href="./index.html">
+                            
+                             Welcome <strong>user</strong>
+                        </a>
                 </li>
-                <li style:"margin-left:5px">
-                    <u>User FB Id:</u><u id="my-profile-facebook-id"></u>
-                </li>
-                
                 <li class="divider"></li>
                 <li><strong>&nbsp; Contributor of the Day</strong>
                 </li>
@@ -85,16 +107,12 @@
                     <a href="https://www.facebook.com/profile.php?id=1733400486&fref=ts" target="blank" class="gitbook-link"><b>3. </b>Danffer</a>
                 </li>
             </ul>
-            
-            
-            
         </div>
 
 
 
-        <div class="book-body">
+        <div class="book-body" style="margin:0px">
             <div class="body-inner">
-                
                 <div class="book-header">
                     <!-- Actions Left -->
 
@@ -106,13 +124,13 @@
                             <button type="button" class="btn">Login</button>
                         </a>
                     </div>
+
                 </div>
 
                 <div class="page-wrapper" tabindex="-1">
                     <div class="page-inner">
                         <section class="normal" id="section-gitbook_1">
-                            <div 
-                                align="center"><img src="{% static "image/logo.png" %}">
+                            <div align="center"><img src="{% static "image/logo.png" %}">
                             </div><br>
                             <div align="center">
                                 <form action="/" method="post" name="word" id="search">{% csrf_token %}
@@ -122,7 +140,7 @@
                                     
                                     
                                 </form>
-                                <!--<form method="get" action="/" id="search">
+                            <!--    <form method="get" action="/" id="search">
                                     <input name="q" type="text" size="500" placeholder="Search..." />
                                 </form> -->
                             </div>
@@ -136,48 +154,47 @@
 
                         <div class="page-inner container" style="margin-bottom:20px">
 
-						<form action="/" class="form-horizontal" method="POST" name="create_word" id="create_word">{% csrf_token %}
-						    
-						    {{ ModalForm }}
+						<form class="form-horizontal">
 						    <div class="form-group">
                                 <label  class="col-sm-2 control-label">Word</label>
                                 <div class="col-sm-8">
-                                  <input  class="form-control" placeholder="Word" name="word">
+                                  <input  class="form-control" placeholder="Word">
                                 </div>
                               </div>
                             <div class="form-group">
-                                <label  class="col-sm-2 control-label">Description</label>
+                                <label  class="col-sm-2 control-label">Definition</label>
                                 <div class="col-sm-8">
-                                    <input  class="form-control" placeholder="Definition" name="description">
+                                    <input  class="form-control" placeholder="Definition">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label  class="col-sm-2 control-label">Example</label>
                                 <div class="col-sm-8">
-                                    <input  class="form-control" placeholder="Give an example" name="sentence">
+                                    <input  class="form-control" placeholder="Give an example">
                                 </div>
                             </div>
+  
                             <div class="form-group">
                                 <label  class="col-sm-2 control-label">Video</label>
                                 <div class="col-sm-6">
-                                    <input  class="form-control" id="videoaddr" placeholder="http://your_video_address" name="video">
+                                    <input  class="form-control" id="videoaddr" placeholder="http://your_video_address">
                                 </div>
                                 <span><button class="btnadd" id="loadvideo" onClick="loadVideo();">Preview</button></span>
                             </div>
+                            
     
                             <div class="form-group">
                                 <label  class="col-sm-2 control-label"></label>
                                 <div class="col-sm-8" id="video_frame">
-                                <iframe width="512" height="288" id="showvideo" src="//www.youtube.com/embed/sfNsw9zTsqk" frameborder="0" allowfullscreen></iframe>
+                                <iframe width="512" height="288" id="showvideo" src="//www.youtube.com/embed/w0dMz8RBG7g" frameborder="0" allowfullscreen></iframe>
                                 </div>
-                            </div>
-                        
+                                </div>
                             
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-8">
-                                  <button type="submit" class="save btnadd" method="POST" name="creating_word" id="creating_word"> Add</button>
+                                  <button type="submit" class="btnadd">Add</button>
                                 </div>
-                            </div>
+                              </div>
                         </form>
 
 					</div>
@@ -186,25 +203,17 @@
                     </div>
                 </div>
             </div>
-            <a href="./error" class="navigation navigation-next navigation-unique" aria-label="Next page" style="margin-right: 2px;"><img src="{% static "image/next15.png" %}">
+            <a href="./error" class="navigation navigation-next navigation-unique" aria-label="Next page" ><img src="{% static "image/next15.png" %}" style="margin:20px;">
             </a>
         </div>
 
         <!--modal-->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" height="500" width="400">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="height=400" style="width=400">
             <div class="modal-dialog">
-                <!--
-            <div class="modal-content">
-            <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title">Testing Modal</h4>
-            </div>
-            <div class="modal-body">
-            -->
                 <div class="ribbon"></div>
                 <div class="login2">
                     <h1>Login</h1>
-                    <p>This will be an amazing experience</p>
+                    <p></p>
                     <form action="login" -->
                         <div class="input">
                             <div class="blockinput">
@@ -237,10 +246,7 @@
 
 
     
-    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="/static/js/plugins/gitbook-plugin-mathjax/plugin.js"></script>
-    <script src="/static/js/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    <script src="/static/js/index.js"></script>
+
     <script>
     require(["gitbook"], function(gitbook) {
         var config = {
@@ -252,11 +258,35 @@
         };
         gitbook.start(config);
     });
+
     function loadVideo() {
         document.getElementById("showvideo").src =document.getElementById("videoaddr").value;
     }
     </script>
-    <link rel="stylesheet" href="../../static/css/MyLoginStyle.css">
+
+    <script id="my-script-playground">
+        window.fbLoaded = function(){
+            // define the events when login status changed.
+            FB.Event.subscribe('auth.login', function(response) {
+                // when user has been logged in, this block will be triggered.
+                var msg = "You're logged in.";
+                $("#my-login-message").html(msg);
+                console.log("Your login response:");
+                console.log(response);
+            });
+
+            // define the action when user clicked the login button.
+            $("#my-login-button").click(function(){
+                FB.login();
+            });
+        };
+    </script>
+    <script src="/static/js/index.js"></script>
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/app2.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="/static/js/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    <script src="/static/js/plugins/gitbook-plugin-livereload/plugin.js"></script>
 </body>
 </html>
 <!-- test -->

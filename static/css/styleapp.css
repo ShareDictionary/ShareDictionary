@@ -101,7 +101,8 @@ form{
 	vertical-align: top;
 	margin:0px;
 	top:4px;
-	max-width:19px;
+	width:30px;
+	height:30px;
 }
 
 .container{

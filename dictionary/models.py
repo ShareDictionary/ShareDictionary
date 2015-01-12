@@ -11,7 +11,7 @@ class Vocabulary(models.Model):
     likes = models.IntegerField(default=0)
     author = models.ForeignKey('auth.User')
     posted_date = models.DateTimeField(
-            default=timezone.now)
+           default=timezone.now)
 
     def post(self):
         self.posted_date = timezone.now()

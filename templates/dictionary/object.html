@@ -8,56 +8,80 @@
 
     
     {% for vocabulary in vocabulary %}
-              <div id="object" class="vocabularyobject">
-                            <div class="page-inner container" style="margin:20px">
-                                <div class="row">
-                                    <div class="col-md-1" id="left">
-                                        <ul>
-                                            <li>
-                                                <a class="glyphicon glyphicon-chevron-up" id="button-up"></a>
-                                            </li>
-                                            <li><span class="counter">{{ vocabulary.likes }}</span>
-                                            </li>
-                                            <li>
-                                                <a class="glyphicon glyphicon-chevron-down" id="button-down"></a>
-                                            </li>
-                                        </ul>
+              <div id="object">
+                    <div class="page-inner container" style="margin-bottom:20px">
+                                
+                                    <div class="col-md-2" id="left" style="padding:0px" align="center">
+                                            <a class="glyphicon glyphicon-chevron-up" style="font-size:30px" id="button-up"></a><br>
+                                            <span class="counter" style="font-size:30px" >{{ vocabulary.likes }}</span><br>
+                                            <a class="glyphicon glyphicon-chevron-down" style="font-size:30px"  id="button-down"></a>
                                     </div>
+                                    
+                                    <!--<div class="col-md-2" id="left" style="padding:0px">-->
+                                    <!--    <ul>-->
+                                    <!--        <li>-->
+                                    <!--            <a class="glyphicon glyphicon-chevron-up" style="font-size:35px" id="button-up"></a>-->
+                                    <!--        </li>-->
+                                    <!--        <li><span class="counter" style="font-size:35px" >{{ vocabulary.likes }}</span>-->
+                                    <!--        </li>-->
+                                    <!--        <li>-->
+                                    <!--            <a class="glyphicon glyphicon-chevron-down" style="font-size:35px"  id="button-down"></a>-->
+                                    <!--        </li>-->
+                                    <!--    </ul>-->
+                                    <!--</div>-->
 
-                                    <div class="col-md-9" id="middle-left">
+                                    <div class="col-md-8" id="middle-left">
 
-                                        <form id="word">
-                                            <div>
-                                                <a class="form-control status-box" rows="2">{{ vocabulary.word }}</a>
-                                            </div>
-                                        </form>
+                                                <form id="word">
+                                                    <div>
+                                                        <h1 style="margin-top:0px"><a>{{ vocabulary.word }}</a></h1>
+                                                    </div>
+                                                </form>
 
-                                        <form id="explain">
-                                            <div>
-                                                <a class="form-control status-box" rows="2">{{ vocabulary.description }}</a>
-                                            </div>
-                                        </form>
+                                                <form id="explain">
+                                                    <div>
+                                                        <h4>{{ vocabulary.description }}</h4>
+                                                    </div>
+                                                </form>
 
-                                        <form id: "sentance">
-                                            <div>
-                                                <a class="form-control status-box" rows="2">{{ vocabulary.sentence }}</a>
-                                            </div>
-                                        </form>
+                                                <form id: "sentance">
+                                                    <div>
+                                                        <h4>{{ vocabulary.sentence }}</h4>
+                                                    </div>
+                                                </form>
+
+
+                                        <!--<form id="word">-->
+                                        <!--    <div>-->
+                                        <!--        <a class="form-control status-box" rows="2">{{ vocabulary.word }}</a>-->
+                                        <!--    </div>-->
+                                        <!--</form>-->
+
+                                        <!--<form id="explain">-->
+                                        <!--    <div>-->
+                                        <!--        <a class="form-control status-box" rows="2">{{ vocabulary.description }}</a>-->
+                                        <!--    </div>-->
+                                        <!--</form>-->
+
+                                        <!--<form id: "sentance">-->
+                                        <!--    <div>-->
+                                        <!--        <a class="form-control status-box" rows="2">{{ vocabulary.sentence }}</a>-->
+                                        <!--    </div>-->
+                                        <!--</form>-->
                                         
                                         {% video vocabulary.video as my_video %}
                                         
-                                           {% video my_video '600x400' %}
+                                           {% video my_video '512x288' %}
                                            
                                         {% endvideo %}
     
                                         </object>
-
+                                        <h4 align="right"><span class="label label-default">by <a href="">Denffer</a> 2015/1/1</span></h4>
                                     </div>
 
-                                    <div class="col-md-2" id="middle-right">
-                                        <a class="glyphicon glyphicon-plus" id="plus"></a>
-                                        <img src="{% static "image/facebook.png" %}" id="facebookImage">
-                                        <!div class="fb-share-button"  data-layout="icon_link"></div>
+                                    <div class="col-md-2" align="center" id="middle-right">
+                                        <a class="glyphicon glyphicon-plus" style="font-size:30px" id="plus"></a>
+                                        <a href="#"><img src="{% static "image/facebook.png" %}" style="margin-left:5px" class="facebookImage" id="facebookImage"></a>
                                         <script type="text/javascript">
                                         $(document).ready(function(){
                                         $('#facebookImage').click(function(e){
@@ -78,12 +102,9 @@
                                         });
                                         </script>
                                     </div>
-
-                                </div>
-
+                               
                             </div>
                         </div>
-                        
 
     {% endfor %}
 {% endblock content %}

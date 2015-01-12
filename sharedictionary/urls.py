@@ -16,9 +16,10 @@ urlpatterns = patterns('',
     (r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':  settings.STATIC_PATH}),
     (r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':  settings.MEDIA_PATH}),
 
-    url(r'^admin/$', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
     
-    url(r'^$', views.search),
+    url(r'^', views.search),
+    #url(r'^', views.create_word),
     url(r'^error$', views.error),
     url(r'^search', views.search),
     url(r'^facebook/$', views.facebook_login),
