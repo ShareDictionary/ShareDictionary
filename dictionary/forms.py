@@ -13,3 +13,4 @@ class SearchForm(forms.Form):
         model = Vocabulary
         fields = ('word',)
         
+        

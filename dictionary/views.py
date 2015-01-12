@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from .forms import WordForm, SearchForm
 from .models import Vocabulary
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.shortcuts import redirect
@@ -13,37 +14,50 @@ def show_index(request):
     #vocabulary = get_object_or_404(Vocabulary)
     return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
 
-def search(request):
-    # #form = SearchForm()
+def create_word(request):
     if request.method == 'POST':
-        #return render(request, 'dictionary/404.html', {})
-        # create a form instance and populate it with data from the request:
-        #return render(request, 'dictionary/404.html', {})
-        # if 'word' in request.data
-        #     form = WordForm(request.POST)
-        #     #form.Vocabulary(model.)
-        #     if form.is_valid():
-        #         return render(request, 'dictionary/404.html', {})
-        #         Vocabulary.objects.create(word=request.POST.get('word'),
-        #         description=request.POST.get('description'),
-        #         sentence=request.POST.get('sentence'),)
-        #         #video=request.POST.get('video'),)
-        #         vocabulary = Vocabulary.objects.filter(word = request.POST.get('word')).order_by('likes')
-        #         return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
-        # form = WordForm(request.POST)
-        # if 'word' in request.POST:
-        #     post = form.save(commit=False)
-        #     post.word = request.POST.get('word')
-        #     post.save()
-        #     #Vocabulary.objects.create(word=request.POST.get('word'))
-        #     return render(request, 'dictionary/404.html', {})
-        form = SearchForm(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
+        wordform = WordForm(request.POST)
+        if wordform.is_valid():
+           
+            my_word = wordform.data.get("word")
+            my_description = wordform.data.get("description")
+            my_sentence = wordform.data.get('sentence')
+            my_video = wordform.data.get('video')
+        
+            print "word: " + my_word
+            print "description: " + my_description
+            print "sentence: " + my_sentence
+            print "video: " + my_video
             
+            user = User.objects.get(username='denffer')
+            
+            Vocabulary.objects.create(
+                word =  my_word, 
+                description = my_description,
+                sentence = my_sentence,
+                author = user, 
+                likes = 0, 
+                video = my_video
+                )
+            
+            vocabulary = Vocabulary.objects.filter(word = my_word).order_by('likes')
+            return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
+            
+        else:
+            wordform = WordForm(request.POST)
+            return render(request, 'dictionary/base.html',)
+    else:
+        wordform = WordForm(request.POST)
+        return render(request, 'dictionary/base.html',)
+
+def search(request, word):
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            vocabulary = Vocabulary.objects.filter(word = request.POST.get('word')).order_by('likes')
             #print vars(request)
             #temp = (request.POST.get('word'), False)
-            vocabulary = Vocabulary.objects.filter(word = request.POST.get('word')).order_by('likes')
+            
             
             #return redirect('blog.views.post_detail', pk=post.pk)
             # process the data in form.cleaned_data as required
@@ -53,12 +67,12 @@ def search(request):
             return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
 
     # if a GET (or any other method) we'll create a blank form
-    else:
-        form = SearchForm(request.POST)
-        return render(request, 'dictionary/object.html',)
+        else:
+            form = SearchForm(request.POST)
+            return render(request, 'dictionary/object.html',)
         
        
-    return render(request, 'dictionary/base.html', {'form': form})
+        return render(request, 'dictionary/base.html', {'form': form})
     
 # def create_word(request):
 #     form = WordForm(request.POST)

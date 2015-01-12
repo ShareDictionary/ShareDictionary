@@ -138,7 +138,7 @@
 
 						<form action="/" class="form-horizontal" method="POST" name="create_word" id="create_word">{% csrf_token %}
 						    
-						    {{ ModalForm }}
+						    {{ form }}
 						    <div class="form-group">
                                 <label  class="col-sm-2 control-label">Word</label>
                                 <div class="col-sm-8">
@@ -160,7 +160,7 @@
                             <div class="form-group">
                                 <label  class="col-sm-2 control-label">Video</label>
                                 <div class="col-sm-6">
-                                    <input  class="form-control" id="videoaddr" placeholder="http://your_video_address" name="video">
+                                    <input  class="form-control" placeholder="http://your_video_address" name="video">
                                 </div>
                                 <span><button class="btnadd" id="loadvideo" onClick="loadVideo();">Preview</button></span>
                             </div>
