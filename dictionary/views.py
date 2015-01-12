@@ -41,7 +41,8 @@ def create_word(request):
                 )
             
             vocabulary = Vocabulary.objects.filter(word = my_word).order_by('likes')
-            return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
+            return HttpResponseRedirect('/'+ my_word)
+            #
             
         else:
             wordform = WordForm(request.POST)
@@ -49,40 +50,31 @@ def create_word(request):
     else:
         wordform = WordForm(request.POST)
         return render(request, 'dictionary/base.html',)
-
+        
+def searchRedirect(request):
+    if request.method == 'POST':
+        my_word = request.POST.get('word')
+        return HttpResponseRedirect('/'+ my_word)
+        
 def search(request, word):
     if request.method == 'POST':
+        
         form = SearchForm(request.POST)
         if form.is_valid():
             vocabulary = Vocabulary.objects.filter(word = request.POST.get('word')).order_by('likes')
-            #print vars(request)
-            #temp = (request.POST.get('word'), False)
-            
-            
-            #return redirect('blog.views.post_detail', pk=post.pk)
-            # process the data in form.cleaned_data as required
-            
-            # redirect to a new URL:
             
             return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
 
-    # if a GET (or any other method) we'll create a blank form
         else:
             form = SearchForm(request.POST)
             return render(request, 'dictionary/object.html',)
         
        
         return render(request, 'dictionary/base.html', {'form': form})
-    
-# def create_word(request):
-#     form = WordForm(request.POST)
-#     return render(request, 'dictionary/404.html', {'form': form})
-    
-#     else:
-#         form = WordForm()
-#     return render(request, 'blog/post_edit.html', {'form': form})
-
-
+    else:
+        word = word.replace('/','');
+        vocabulary = Vocabulary.objects.filter(word = word).order_by('likes')
+        return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
 
 def error(request):
     return render(request, 'dictionary/404.html', {})

@@ -115,7 +115,8 @@
                                 align="center"><img src="{% static "image/logo.png" %}">
                             </div><br>
                             <div align="center">
-                                <form action="/" method="post" name="word" id="search">{% csrf_token %}
+                                <form action="/" method="POST"  id="search">
+                                    {% csrf_token %}
                                     
                                     {{ form }}
                                     <input type="text" name="word" size="1000" placeholder="Search..." />
@@ -136,7 +137,7 @@
 
                         <div class="page-inner container" style="margin-bottom:20px">
 
-						<form action="/" class="form-horizontal" method="POST" name="create_word" id="create_word">{% csrf_token %}
+						<form action="/create" class="form-horizontal" method="POST" name="create_word" id="create_word">{% csrf_token %}
 						    
 						    {{ form }}
 						    <div class="form-group">
