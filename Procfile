@@ -1,1 +1,1 @@
-web: gunicorn ShareDictionary.wsgi --log-file -
+web: gunicorn sharedictionary.wsgi --log-file -
