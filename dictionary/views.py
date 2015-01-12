@@ -48,7 +48,7 @@ def create_word(request):
             return render(request, 'dictionary/base.html',)
     else:
         wordform = WordForm(request.POST)
-        return render(request, 'dictionary/404.html',)
+        return render(request, 'dictionary/base.html',)
 
 def search(request, word):
     if request.method == 'POST':
