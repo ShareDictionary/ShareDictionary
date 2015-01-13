@@ -184,6 +184,8 @@ SOCIAL_AUTH_RAISE_EXCEPTIONS = True
 RAISE_EXCEPTIONS = True
 DEBUG = True
 
+#X_FRAME_OPTIONS = 'ALLOW-FROM www.youtube.com'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

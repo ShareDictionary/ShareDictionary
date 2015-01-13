@@ -39,7 +39,23 @@
     
     <script src="/static/js/app.js"></script>
     <script src="/static/js/app2.js"></script>
-
+    <script type="text/javascript">
+        window.onload = function(){
+            document.getElementById("video").addEventListener("keyup", function(){
+                var str = document.getElementById("video").value;
+                var url = str.replace("watch?v=", "embed/");
+                
+                if(str == "") {
+                    $("#showvideo").attr("width", 0);
+                    $("#showvideo").attr("height", 0);                  
+                } else {
+                    $("#showvideo").attr("width", 512);
+                    $("#showvideo").attr("height", 280);   
+                }
+                $("#showvideo").attr("src", url);
+            }, false);  
+        };
+    </script>
     
 
 </head>
@@ -173,12 +189,12 @@
                                 <label  class="col-sm-2 control-label"></label>
                                 <div class="col-sm-8" id="video_frame">
                                    
-                                    {% video "https://www.youtube.com/watch?v=GXLBNJUOU5w" as my_video %}
+                                    <!--{% video video_frame as my_video %}-->
                                         
-                                           {% video my_video '512x315' %}
+                                    <!--       {% video my_video '512x315' %}-->
                                            
-                                        {% endvideo %}
-                                <!--<iframe width="512" height="288" id="showvideo" src=input frameborder="0" allowfullscreen></iframe>-->
+                                    <!--{% endvideo %}-->
+                                <iframe width="0" height="0" id="showvideo" src="" frameborder="0" allowfullscreen></iframe>
                                 </div>
                             </div>
                             
@@ -262,13 +278,6 @@
         };
         gitbook.start(config);
     });
-    function loadVideo() {
-        
-         var input = document.getElementById("video");
-         return input;
-         
-    }
-   
     
 
     
