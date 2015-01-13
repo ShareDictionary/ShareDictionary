@@ -70,17 +70,48 @@
         <div class="book-summary">
             <ul class="summary">
                 
-                <li class="chapter active" data-level="0" data-path="index.html">
+                <li class="chapter active" data-level="0" >
                     
+
                     <a href="#"  id="welcome"><img id="my-profile-picture">  Welcome <u id="my-profile-name"></u></a>
+
+                    <a href="#"  id="welcome"><img id="my-profile-picture"><b style="font-size:18px">&nbsp;Welcome</b><u style="font-size:18px" id="my-profile-name"></u></a>
+
                 </li>
-                <li style:"margin-left:5px">
-                    <u>User FB Id:</u><u id="my-profile-facebook-id"></u>
+                <!--<li style:"margin-left:5px">-->
+                <!--    <u>User FB Id:</u><u id="my-profile-facebook-id"></u>-->
                     
+                <!--</li>-->
+                <li class="divider"></li>
+                <li><h4><strong>&nbsp; Top 5 </strong></h4>
+                </li>
+
+                <li>
+                    <a href="" target="blank" class="gitbook-link"><b>1. </b>Testing1</a>
+                </li>
+                <li>
+                    <a href="" target="blank" class="gitbook-link"><b>2. </b>Testing1</a>
+                </li>
+                <li>
+                    <a href="" target="blank" class="gitbook-link"><b>3. </b>Testing1</a>
                 </li>
                 
                 <li class="divider"></li>
-                <li><strong>&nbsp; Contributor of the Day</strong>
+                <li><h4><strong>&nbsp; Most LIKES</strong></h4>
+                </li>
+
+                <li>
+                    <a href="" target="blank" class="gitbook-link"><b>1. </b>Testing1</a>
+                </li>
+                <li>
+                    <a href="" target="blank" class="gitbook-link"><b>2. </b>Testing2</a>
+                </li>
+                <li>
+                    <a href="" target="blank" class="gitbook-link"><b>3. </b>Testing3</a>
+                </li>
+                
+                <li class="divider"></li>
+                <li><h4><strong>&nbsp; Contributor of the Day</strong></h4>
                 </li>
 
                 <li>
@@ -94,7 +125,7 @@
                 </li>
 
                 <li class="divider"></li>
-                <li><strong>&nbsp; Contributor of the Month</strong>
+                <li><h4><strong>&nbsp; Contributor of the Month</strong></h4>
                 </li>
                 <li>
                     <a href="https://www.facebook.com/profile.php?id=100000440338175" target="blank" class="gitbook-link"><b>1. </b>Mia</a>
@@ -117,7 +148,7 @@
                 <div class="book-header">
                     <!-- Actions Left -->
 
-                    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><img src="{% static "image/list23.png" %}">
+                    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><img src="{% static "image/menu9.png" %}">
                     </a>
                     <div class="dropdown pull-right">
                         <h4></h4>
@@ -130,8 +161,7 @@
                 <div class="page-wrapper" >
                     <div class="page-inner">
                         <section class="normal" id="section-gitbook_1">
-                            <div 
-                                align="center"><img src="{% static "image/logo3.png" %}">
+                            <div align="center"><a href="/"><img src="{% static "image/logo3.png" %}" style="width:100%;" ></a>
                             </div><br>
                             <div align="center">
                                 <form action="/" method="POST"  id="search">
@@ -154,41 +184,40 @@
                         {% endblock content %}
 
 
-                        <div class="page-inner container" style="margin-bottom:20px">
+                        <div class="page-inner container" style="margin-bottom:20px; padding:20px">
 
-						<form action="/create" class="form-horizontal" method="POST" name="create_word" id="create_word">{% csrf_token %}
+						<form action="/create" class="form-horizontal" method="POST" name="create_word" id="create_word" align="conter">{% csrf_token %}
 						    
 						    {{ form }}
-						    <div class="form-group">
+						    <div class="form-group" style="margin-top:20px;">
                                 <label  class="col-sm-2 control-label">Word</label>
-                                <div class="col-sm-8">
-                                  <input  class="form-control" placeholder="Word" name="word">
+                                <div class="col-sm-9">
+                                  <input  class="form-control" style="background-color: #fafafa" placeholder="Word" name="word">
                                 </div>
                               </div>
                             <div class="form-group">
                                 <label  class="col-sm-2 control-label">Description</label>
-                                <div class="col-sm-8">
-                                    <input  class="form-control" placeholder="Definition" name="description">
+                                <div class="col-sm-9">
+                                    <input  class="form-control"  style="background-color: #fafafa"placeholder="Definition" name="description">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label  class="col-sm-2 control-label">Example</label>
-                                <div class="col-sm-8">
-                                    <input  class="form-control" placeholder="Give an example" name="sentence">
+                                <div class="col-sm-9">
+                                    <input  class="form-control" style="background-color: #fafafa" placeholder="Give an example" name="sentence">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label  class="col-sm-2 control-label">Video</label>
-                                <div class="col-sm-6">
-                                    <input  type="video" class="form-control" placeholder="http://your_video_address" name="video" id="video">
+                                <div class="col-sm-9">
+                                    <input  type="video" class="form-control"  style="background-color: #fafafa" placeholder="http://your_video_address" name="video" id="video">
                                 </div>
                                 <!--<span><button class="btnadd" id="loadvideo" onClick="loadVideo();">Upload</button></span>-->
                                 <!--<span><button class="btnadd" id="loadvideo" onClick="loadVideo();">Upload</button></span>-->
                             </div>
     
                             <div class="form-group">
-                                <label  class="col-sm-2 control-label"></label>
-                                <div class="col-sm-8" id="video_frame">
+                                <div class="col-sm-offset-2 col-sm-9" id="video_frame">
                                    
                                     <!--{% video video_frame as my_video %}-->
                                         
@@ -200,7 +229,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-8">
+                                <div class="col-sm-offset-2 col-sm-9" align="right">
                                   <button type="submit" class="save btnadd" onclick="check_if_can_post()" name="creating_word" id="creating_word"> Add</button>
                                 </div>
                             </div>
@@ -315,3 +344,4 @@
 <!-- test -->
 <!-- test -->
 </html>
+ls
