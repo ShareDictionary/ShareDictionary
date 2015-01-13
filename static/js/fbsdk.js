@@ -93,6 +93,7 @@
             
           }else{
               FB.login();
+              fetch_my_profile();
           }
         });
     }
