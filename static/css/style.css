@@ -2276,6 +2276,7 @@ table {
     transition: left 250ms ease
 }
 .book .book-body .body-inner {
+    background-color:#eaeaea;
     position: absolute;
     top: 0;
     right: 0;
