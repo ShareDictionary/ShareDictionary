@@ -1808,7 +1808,7 @@ table {
 .book .book-header {
     font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     overflow: visible;
-    height: 50px;
+    height: 65px;
     padding: 0 8px;
     z-index: 2;
     font-size: .85em;
@@ -1817,16 +1817,20 @@ table {
 }
 .book .book-header .btn {
     display: block;
-    height: 40px;
+    height: 45px;
     padding: 0 10px;
+    padding-left:10px;
+    padding-right:10px;
+    margin-right:20px;
+    margin-top:10px;
     border-bottom: 0;
     color: #fff;
     text-transform: uppercase;
-    line-height: 40px;
+    line-height: 45px;
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
     position: relative;
-    font-size: 12px
+    font-size: 18px
 }
 .book .book-header .btn:hover {
     position: relative;
@@ -2123,7 +2127,7 @@ table {
 }
 .book .book-summary ul.summary li.divider {
     height: 1px;
-    margin: 7px 0;
+    margin: 15px 0;
     overflow: hidden;
     background: rgba(0, 0, 0, 0.07)
 }
@@ -2264,7 +2268,7 @@ table {
     right: 0;
     left: 0;
     bottom: 0;
-    margin-top:3px;
+    margin-top:0px;
     margin-right:0px;
     /*overflow: hidden;*/
     /*overflow-y: auto;*/

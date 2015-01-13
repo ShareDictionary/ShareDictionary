@@ -37,7 +37,7 @@ width: 83.33333333%;
 width: 75%;
 }
 .col-md-8 {
-width: 66.66666667%;
+width: 70%;
 }
 .col-md-7 {
 width: 58.33333333%;
@@ -73,10 +73,7 @@ object{
 	margin-left: 15%;
 	width: 210px;
 	height:150px;
-	box-shadow: 2px 2px 3px 0px #eaeaea;
-	-webkit-box-shadow: 2px 2px 3px 0px #eaeaea;
-	-moz-box-shadow: 2px 2px 3px 0px #eaeaea;
-	-o-box-shadow: 2px 2px 3px 0px #eaeaea;
+
 
 }
 form{
@@ -113,10 +110,10 @@ form{
 .container{
 	background-color:#ffffff;
 	width: 60%;
-	box-shadow: 2px 2px 3px 0px #eaeaea;
-	-webkit-box-shadow: 2px 2px 3px 0px #eaeaea;
-	-moz-box-shadow: 2px 2px 3px 0px #eaeaea;
-	-o-box-shadow: 2px 2px 3px 0px #eaeaea;
+	box-shadow: 2px 2px 3px 0px #aaaaaa;
+	-webkit-box-shadow: 2px 2px 3px 0px #aaaaaa;
+	-moz-box-shadow: 2px 2px 3px 0px #aaaaaa;
+	-o-box-shadow: 2px 2px 3px 0px #aaaaaa;
 
 }
 
