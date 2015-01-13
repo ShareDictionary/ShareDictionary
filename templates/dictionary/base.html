@@ -1,5 +1,5 @@
 {% load staticfiles %}
-
+{% load embed_video_tags %}
 <!DOCTYPE HTML>
 <html lang="en-US">
 
@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!--link rel="stylesheet" href="/static/css/loginstyle.css" media="screen" type="text/css" /-->
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="media/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../../media/icon.png" type="/media/x-icon">
+    <link rel="shortcut icon" href="../../static/image/icon.png" type="/media/x-icon">
 
     <link rel="stylesheet" href="../../static/css/styleapp.css">
     <link rel="stylesheet" href="../../static/css/style.css">
@@ -54,10 +54,12 @@
             <ul class="summary">
                 
                 <li class="chapter active" data-level="0" data-path="index.html">
-                    <a href="./index.html" id="welcome"><img id="my-profile-picture">Welcome <u id="my-profile-name"></u></a>
+                    
+                    <a href="#"  id="welcome"><img id="my-profile-picture">Welcome <u id="my-profile-name"></u></a>
                 </li>
                 <li style:"margin-left:5px">
                     <u>User FB Id:</u><u id="my-profile-facebook-id"></u>
+                    
                 </li>
                 
                 <li class="divider"></li>
@@ -71,7 +73,7 @@
                     <a href="https://www.facebook.com/profile.php?id=100002578523190&fref=ts" target="blank" class="gitbook-link"><b>2. </b>Tom</a>
                 </li>
                 <li>
-                    <a href="https://www.facebook.com/profile.php?id=1733400486&fref=ts" target="blank" class="gitbook-link"><b>3. </b>Danffer</a>
+                    <a href="https://www.facebook.com/profile.php?id=1733400486&fref=ts" target="blank" class="gitbook-link"><b>3. </b>Denffer</a>
                 </li>
 
                 <li class="divider"></li>
@@ -84,7 +86,7 @@
                     <a href="https://www.facebook.com/profile.php?id=100002578523190&fref=ts" target="blank" class="gitbook-link"><b>2. </b>Tom</a>
                 </li>
                 <li>
-                    <a href="https://www.facebook.com/profile.php?id=1733400486&fref=ts" target="blank" class="gitbook-link"><b>3. </b>Danffer</a>
+                    <a href="https://www.facebook.com/profile.php?id=1733400486&fref=ts" target="blank" class="gitbook-link"><b>3. </b>Denffer</a>
                 </li>
             </ul>
 
@@ -108,11 +110,11 @@
                     </div>
                 </div>
 
-                <div class="page-wrapper" tabindex="-1">
+                <div class="page-wrapper" >
                     <div class="page-inner">
                         <section class="normal" id="section-gitbook_1">
                             <div 
-                                align="center"><img src="{% static "image/logo.png" %}">
+                                align="center"><img src="{% static "image/logo3.png" %}">
                             </div><br>
                             <div align="center">
                                 <form action="/" method="POST"  id="search">
@@ -161,15 +163,22 @@
                             <div class="form-group">
                                 <label  class="col-sm-2 control-label">Video</label>
                                 <div class="col-sm-6">
-                                    <input  class="form-control" placeholder="http://your_video_address" name="video">
+                                    <input  type="video" class="form-control" placeholder="http://your_video_address" name="video" id="video">
                                 </div>
-                                <span><button class="btnadd" id="loadvideo" onClick="loadVideo();">Preview</button></span>
+                                <!--<span><button class="btnadd" id="loadvideo" onClick="loadVideo();">Upload</button></span>-->
+                                <!--<span><button class="btnadd" id="loadvideo" onClick="loadVideo();">Upload</button></span>-->
                             </div>
     
                             <div class="form-group">
                                 <label  class="col-sm-2 control-label"></label>
                                 <div class="col-sm-8" id="video_frame">
-                                <iframe width="512" height="288" id="showvideo" src="//www.youtube.com/embed/sfNsw9zTsqk" frameborder="0" allowfullscreen></iframe>
+                                   
+                                    {% video "https://www.youtube.com/watch?v=GXLBNJUOU5w" as my_video %}
+                                        
+                                           {% video my_video '512x315' %}
+                                           
+                                        {% endvideo %}
+                                <!--<iframe width="512" height="288" id="showvideo" src=input frameborder="0" allowfullscreen></iframe>-->
                                 </div>
                             </div>
                             
@@ -241,6 +250,7 @@
     <script src="/static/js/plugins/gitbook-plugin-mathjax/plugin.js"></script>
     <script src="/static/js/plugins/gitbook-plugin-livereload/plugin.js"></script>
     <script src="/static/js/index.js"></script>
+    
     <script>
     require(["gitbook"], function(gitbook) {
         var config = {
@@ -253,10 +263,39 @@
         gitbook.start(config);
     });
     function loadVideo() {
-        document.getElementById("showvideo").src =document.getElementById("videoaddr").value;
+        
+         var input = document.getElementById("video");
+         return input;
+         
     }
+   
+    
+
+    
+
+    
     </script>
+    
+    <script type="video/javascript">
+        var input = document.getElementById("video").value;
+        return input;
+    </script>
+    
     <link rel="stylesheet" href="../../static/css/MyLoginStyle.css">
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+    
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/app2.js"></script>
+
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="/static/js/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    <script src="/static/js/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    <script src="/static/js/index.js"></script>
 </body>
 </html>
 <!-- test -->

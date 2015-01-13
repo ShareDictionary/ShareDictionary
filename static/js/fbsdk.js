@@ -48,9 +48,11 @@
             var my_gender = response.gender;
             var my_username = response.last_name;
             var my_facebook_id = response.id;
+            var my_website = response.webstie;
         
             $("#my-profile-name").html(my_first_name);
             $("#my-profile-facebook-id").html(my_facebook_id);
+            $("#my-profile-website").html(my_website);
         });
         
         FB.api('/me/picture', function(response) {

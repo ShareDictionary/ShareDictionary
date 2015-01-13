@@ -21,6 +21,7 @@
 }
 #search input[type="text"]:focus {
     width: 500px;
+    color:#bebebe;
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block
@@ -2284,7 +2285,8 @@ table {
 }
 .book .book-body .page-wrapper {
     position: relative;
-    outline: 0
+    outline: 0;
+    background: #eaeaea;
 }
 .book .book-body .page-wrapper .page-inner {
     max-width: 800px;
@@ -2417,6 +2419,7 @@ table {
     -webkit-text-size-adjust: 100%;
     line-height: 1.4;
     color: #333;
+    background-color:transparent;
     overflow: hidden;
     line-height: 1.6;
     word-wrap: break-word;
