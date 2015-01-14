@@ -87,15 +87,14 @@
     {% endfor %}
     
                 <!--Mia 這裡我們需要一張卡 告訴使用者 " 找不到自己想要的解釋嗎? 和我們分享吧 =) ? "-->
-                <div class="page-inner container" style="margin-bottom:20px; padding:20px">
-                    <h1 align="center">Can't find the usage you like? share with us !</h1>
-                </div>
+
     
                             <div class="page-inner container" style="margin-bottom:20px; padding:20px">
 
 						<form action="/create_word" class="form-horizontal" method="POST" name="create_word" id="create_word" align="conter">{% csrf_token %}
 						    
 						    {{ form }}
+						    <h1 align="center" style="margin-bottom:30px;">Can't find the usage you like? share with us !</h1>
 						    <div class="form-group" style="margin-top:20px;">
                                 <label  class="col-sm-2 control-label">Word</label>
                                 <div class="col-sm-9">
