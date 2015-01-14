@@ -18,7 +18,7 @@
     <!--link rel="stylesheet" href="/static/css/loginstyle.css" media="screen" type="text/css" /-->
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="media/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../../static/image/icon.png" type="/media/x-icon">
-
+    <link rel="stylesheet" href="../../static/css/animate.css">
     <link rel="stylesheet" href="../../static/css/styleapp.css">
     <link rel="stylesheet" href="../../static/css/style.css">
     
@@ -41,6 +41,7 @@
     <script src="/static/js/app2.js"></script>
     <script type="text/javascript">
         window.onload = function(){
+            $('#inner').addClass('animated fadeInUp');
             document.getElementById("video").addEventListener("keyup", function(){
                 var str = document.getElementById("video").value;
                 var url = str.replace("watch?v=", "embed/");
@@ -49,8 +50,8 @@
                     $("#showvideo").attr("width", 0);
                     $("#showvideo").attr("height", 0);                  
                 } else {
-                    $("#showvideo").attr("width", 512);
-                    $("#showvideo").attr("height", 280);   
+                    $("#showvideo").attr("width", 550);
+                    $("#showvideo").attr("height", 350);   
                 }
                 
                 $("#showvideo").attr("src", url);
@@ -80,7 +81,7 @@
                 <li class="chapter active" data-level="0" >
                     
 
-                    <a href="#"  id="welcome"><img id="my-profile-picture"><b style="font-size:18px">&nbsp;Welcome</b><u style="font-size:18px" id="my-profile-name"></u></a>
+                    <a href="/"  id="welcome"><img id="my-profile-picture"><b style="font-size:18px">&nbsp;Welcome</b><u style="font-size:18px" id="my-profile-name"></u></a>
 
                 </li>
                 <!--<li style:"margin-left:5px">-->
@@ -165,9 +166,9 @@
                 </div>
 
                 <div class="page-wrapper" >
-                    <div class="page-inner">
+                    <div class="page-inner" id="inner">
                         <section class="normal" id="section-gitbook_1">
-                            <div align="center"><a href="/"><img src="{% static "image/logo3.png" %}" style="width:100%;" ></a>
+                            <div align="center"><a href="/"><img id="logo" src="{% static "image/logo3.png" %}" style="width:100%;" ></a>
                             </div><br>
                             <div align="center">
                                 <form action="/" method="POST"  id="search">
@@ -251,7 +252,10 @@
     <script src="/static/js/plugins/gitbook-plugin-mathjax/plugin.js"></script>
     <script src="/static/js/plugins/gitbook-plugin-livereload/plugin.js"></script>
     <script src="/static/js/index.js"></script>
-    
+    <script>
+        var test=document.getElementById("test");
+        if(test.value=="testing")alert("no word found");
+    </script>
     <script>
     require(["gitbook"], function(gitbook) {
         var config = {
