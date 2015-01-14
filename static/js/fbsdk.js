@@ -103,7 +103,7 @@
             //window.fbLoaded();.
             
           }else{
-          var myModal = document.getElementById("login-toggle");
+            var myModal = document.getElementById("login-toggle");
             myModal.setAttribute("href","#myModal");
           }
         });
