@@ -1,4 +1,9 @@
+*{
+    font-family:'Source Sans Pro', sans-serif, Gentium, "微軟正黑體", "標楷體", serif;
+}
+
 .btnadd {
+font-family:'Source Sans Pro', sans-serif, Gentium, "微軟正黑體", "標楷體", serif;
 display: inline-block;
 padding: 6px 12px;
 margin-bottom: 0;

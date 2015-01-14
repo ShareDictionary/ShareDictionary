@@ -1,8 +1,5 @@
-$(function() {
-    $("#search input").keypress(function(event){     
-        if (event.keyCode == 13) $('#inner').addClass('animated fadeInUp');
-    });
-});
+
+
 
 var requirejs, require, define;
 (function(global) {

@@ -1,3 +1,7 @@
+*{
+  font-family:'Source Sans Pro', sans-serif, Gentium, "微軟正黑體", "標楷體", serif;
+}
+
 .btn.btn-facebook {
 color: #fff;
 text-shadow: none;
@@ -58,7 +62,7 @@ a{
 }
 
 p{
-  font-family:'Helvetica Neue';
+  font-family:'Source Sans Pro', sans-serif, Gentium, "微軟正黑體", "標楷體", serif;
   font-weight: 300;
   color: #7B808A;
   margin-top: 0;

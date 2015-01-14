@@ -1,7 +1,8 @@
-
+*{font-family:'Source Sans Pro', sans-serif, Gentium, "微軟正黑體", "標楷體", serif;}
 
 #search {} #search input[type="text"] {
-    background: url("gitbook/images/search-white.png") no-repeat 10px 6px #fcfcfc;
+    background: url("ShareDictionary/static/image/search-white.png") no-repeat 10px 6px #fcfcfc;
+    font-family:'Source Sans Pro', sans-serif, Gentium, "微軟正黑體", "標楷體", serif;
     border: 2px solid #d1d1d1;
     font: bold 15px Arial, Helvetica, Sans-serif;
     color: #bebebe;
@@ -1825,7 +1826,7 @@ table {
     margin-top:10px;
     border-bottom: 0;
     color: #fff;
-    text-transform: uppercase;
+
     line-height: 45px;
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
