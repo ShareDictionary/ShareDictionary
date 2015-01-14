@@ -42,7 +42,8 @@ def create_word(request):
                     video = my_video
                     )
                 
-                vocabulary = Vocabulary.objects.filter(word = my_word).order_by('likes')
+                #vocabulary = Vocabulary.objects.filter(word = my_word).order_by('-likes')
+                
                 return HttpResponseRedirect('/'+ my_word)
                 #
                 
@@ -63,7 +64,7 @@ def search(request, word):
         
         form = SearchForm(request.POST)
         if form.is_valid():
-            vocabulary = Vocabulary.objects.filter(word = request.POST.get('word')).order_by('likes')
+            vocabulary = Vocabulary.objects.filter(word = request.POST.get('word')).order_by('-likes')
             
             return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
 
@@ -76,7 +77,7 @@ def search(request, word):
     else:
         if word:
             word = word.replace('/','');
-            vocabulary = Vocabulary.objects.filter(word = word).order_by('likes')
+            vocabulary = Vocabulary.objects.filter(word = word).order_by('-likes')
             return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
         else:
             return render(request, 'dictionary/base.html',)

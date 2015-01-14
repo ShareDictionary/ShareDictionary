@@ -1,13 +1,4 @@
-document.addEventListener("click", function(){
-    var word = document.getElementById("word").value;
-    var decription = document.getElementById("description").value;
-    var sentence = document.getElementById("sentence").value;
 
-    if(word == ""){
-       alert("I am an alert box!");
-    //   document.getElementById("add_word").innerHTML = "Test";
-    }
-});
 
 var requirejs, require, define;
 (function(global) {
