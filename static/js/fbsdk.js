@@ -110,6 +110,11 @@
     }
     
     function check_if_can_post(){
+      if(document.getElementById("description").value==""||document.getElementById("sentence").value==""||document.getElementById("word").value=="") {
+        alert("你的輸入不完整");
+        $('#add_word').attr( 'type','button' );
+      }else{
+                
         FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
             // the user is logged in and has authenticated your
@@ -121,21 +126,23 @@
             var accessToken = response.authResponse.accessToken;
             
             //$('#creating_word').removeClass( 'red-class' );
-            $("#creating_word").attr('method', "POST");
-            $("#creating_word").attr('type', "submit");
+            $("#add_word").attr('method', "POST");
+            $("#add_word").attr('type', "submit");
             
           }else{
-              $('#creating_word').attr( 'type','button' );
+              $('#add_word').attr( 'type','button' );
               //$('#creating_word').removeClass( 'red-class' );
               //window.fbLoaded();
               FB.login();
               if (response.status === 'connected') {
                 //fetch_my_profile();
-                $("#creating_word").attr('method', "POST");
+                $("#add_word").attr('method', "POST");
                 
               }
         }
         });
+        
+        }
     }
     
     
