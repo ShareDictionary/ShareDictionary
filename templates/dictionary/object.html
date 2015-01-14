@@ -63,12 +63,11 @@
                                                     method: 'feed',
                                                     name: 'ShareDictionary',
                                                     display: "popup",
-                                                    link: ' https://sharedictionary-tom8u4286-1.c9.io/',
+                                                    link: ' https://sharedictionary-tom8u4286-1.c9.io/{{ vocabulary.word }}',
                                                     picture: 'https://sharedictionary-tom8u4286-1.c9.io/static/image/logo.png',
-                                                    caption: 'This is the content of the "caption" field.',
-                                                    description: ["{{ vocabulary.word }}\b",
-                                                    "{{ vocabulary.description }}\b",
-                                                    "{{vocabulary.sentence}}"]
+                                                    description: 'The Word "{{ vocabulary.word }}" is shared in ShareDictionary!',
+                                                    caption: '',
+                                                    //{{vocabulary.sentence}}
                                                 });
                                             });
                                             }
