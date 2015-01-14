@@ -1,4 +1,11 @@
-
+// $(function() {
+//     $("#search input").keypress(function(event){     
+//         if (event.keyCode == 13) {
+//             $('#section-gitbook_1').addClass('animated fadeInUp');
+//             document.getElementById("section-gitbook_1").style.margin-top="0px";
+//         }
+//     });
+// });
 
 
 var requirejs, require, define;

@@ -65,10 +65,7 @@
                 
 // });
          };
-         if(document.getElementById("description")== "") 
-                {
-                        alert("輸入不完整");
-                }
+         
     </script>
 
 </head>
@@ -247,8 +244,13 @@
     <script src="/static/js/plugins/gitbook-plugin-livereload/plugin.js"></script>
     <script src="/static/js/index.js"></script>
     <script>
-        var test=document.getElementById("test");
-        if(test.value=="testing")alert("no word found");
+        function test(){
+            if(document.getElementById("description")=="") 
+                {
+                        alert("輸入不完整");
+                }
+            
+        }
     </script>
     <script>
     require(["gitbook"], function(gitbook) {
