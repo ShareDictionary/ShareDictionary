@@ -73,9 +73,10 @@ def search(request, word):
             # TODO: write code...
             if form.is_valid():
                 vocabulary = Vocabulary.objects.filter(word = request.POST.get('word')).order_by('-likes')
+                default = Vocabulary.objects.filter(word = request.POST.get('word'))[:1]
                 most_liked = Vocabulary.objects.all().order_by('-likes')[:5]
                 latest = Vocabulary.objects.all().order_by('-posted_date')[:5]
-                return render(request, 'dictionary/object.html', {'vocabulary': vocabulary, 'most_liked': most_liked, 'latest': latest})
+                return render(request, 'dictionary/object.html', {'vocabulary': vocabulary, 'default': default ,'most_liked': most_liked, 'latest': latest})
 
         else:
             form = SearchForm(request.POST)
@@ -89,9 +90,10 @@ def search(request, word):
         if word:
             word = word.replace('/','');
             vocabulary = Vocabulary.objects.filter(word = word).order_by('-likes')
+            default = Vocabulary.objects.filter(word = request.POST.get('word'))[:1]
             most_liked = Vocabulary.objects.all().order_by('-likes')[:5]
             latest = Vocabulary.objects.all().order_by('-posted_date')[:5]
-            return render(request, 'dictionary/object.html', {'vocabulary': vocabulary, 'most_liked': most_liked, 'latest': latest})
+            return render(request, 'dictionary/object.html', {'vocabulary': vocabulary, 'default': default,'most_liked': most_liked, 'latest': latest})
             
         else:
             most_liked = Vocabulary.objects.all().order_by('-likes')[:5]

@@ -63,8 +63,8 @@
                                                     method: 'feed',
                                                     name: 'ShareDictionary',
                                                     display: "popup",
-                                                    link: ' https://sharedictionary-tom8u4286-1.c9.io/{{ vocabulary.word }}',
-                                                    picture: 'https://sharedictionary-tom8u4286-1.c9.io/static/image/logo-D.jpg',
+                                                    link: ' https://dictionary-yunqy.c9.io/{{ vocabulary.word }}',
+                                                    picture: 'https://dictionary-yunqy.c9.io/static/image/logo-D.jpg',
                                                     description: 'wants to share the word "{{ vocabulary.word }}" with you!',
                                                     caption: 'Join us, share a word !',
                                                     //{{vocabulary.sentence}}
@@ -85,7 +85,6 @@
                             
 
     {% endfor %}
-    
                 <!--Mia 這裡我們需要一張卡 告訴使用者 " 找不到自己想要的解釋嗎? 和我們分享吧 =) ? "-->
 
     
@@ -95,16 +94,21 @@
 						    
 						    {{ form }}
 						    <h1 align="center" style="margin-bottom:30px;">Share a word with others !</h1>
+						    {% for default in default %}
 						    <div class="form-group" style="margin-top:20px;">
                                 <label  class="col-sm-2 control-label">Word</label>
                                 <div class="col-sm-9">
-                                  <input type="text" class="form-control" style="background-color: #fafafa" placeholder="Word" name="word" id="word" value="{{ vocabulary.word }}"/>
+                                    
+                                    <input type="text" class="form-control" style="background-color: #fafafa" placeholder="Word" name="word" id="word" value="{{ default.word }}"/>
+                                    <!--script type="text/javascript" src="">$("#word").attr("value","{{ v.word }}");</script-->
                                 </div>
-                              </div>
+                            </div>
+                            {% endfor %}
+                            
                             <div class="form-group">
                                 <label  class="col-sm-2 control-label">Description</label>
                                 <div class="col-sm-9">
-                                    <input  class="form-control"  style="background-color: #fafafa"placeholder="Definition" name="description" id="description">
+                                    <input  class="form-control"  style="background-color: #fafafa"placeholder="Definition" name="description" id="description" >
                                 </div>
                             </div>
                             <div class="form-group">
@@ -142,5 +146,6 @@
                         </form>
 
 					</div>
+	 
 {% endblock content %}
 
