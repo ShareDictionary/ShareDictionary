@@ -1,0 +1,57 @@
+{% extends 'dictionary/base.html' %}
+{% load staticfiles %}
+{% load embed_video_tags %}
+
+
+{% block content %}
+
+<div id="object">
+                    <div class="page-inner container" style="margin-bottom:20px">
+                                
+                                    <div class="col-md-2" id="left" style="padding:0px" align="center">
+                                            <a class="glyphicon glyphicon-chevron-up" style="font-size:30px" id="button-up"></a><br>
+                                            <span class="counter" style="font-size:30px" > </span><br>
+                                            <a class="glyphicon glyphicon-chevron-down" style="font-size:30px"  id="button-down"></a>
+                                    </div>
+
+                                    <div class="col-md-8" id="middle-left">
+
+                                                <form id="word">
+                                                    <div>
+                                                        <h1 style="margin-top:0px"><a> Welcome </a></h1>
+                                                    </div>
+                                                </form>
+
+                                                <form id="explain">
+                                                    <div>
+                                                        <h4>This will be an amazing experience</h4>
+                                                    </div>
+                                                </form>
+
+                                                <form id: "sentance">
+                                                    <div>
+                                                        <h4> </h4>
+                                                    </div>
+                                                </form>
+
+                                    
+                                        {% video "https://www.youtube.com/watch?v=Bzr5VtFvSyw" as my_video %}
+                                        
+                                           {% video my_video '512x315' %}
+                                           
+                                        {% endvideo %}
+                                        
+                                        
+                                        
+                                    </div>
+                   
+                                    <div class="col-md-12" style="padding:5px; padding-right:30px" align="right">
+                                        <h4><span class="label label-default">By <a href="">ShareDictionary</a></span></h4>
+                                    </div>
+                               
+                               
+                               
+                               </div>
+                            </div>
+
+{% endblock content %}
