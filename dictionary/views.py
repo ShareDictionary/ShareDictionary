@@ -23,30 +23,32 @@ def create_word(request):
             my_description = wordform.data.get("description")
             my_sentence = wordform.data.get('sentence')
             my_video = wordform.data.get('video')
-        
-            print "word: " + my_word
-            print "description: " + my_description
-            print "sentence: " + my_sentence
-            print "video: " + my_video
             
-            user = User.objects.get(username='denffer')
+            if(my_word != "" & my_description != ""  & my_sentence != ""  & my_video != ""):
             
-            Vocabulary.objects.create(
-                word =  my_word, 
-                description = my_description,
-                sentence = my_sentence,
-                author = user, 
-                likes = 0, 
-                video = my_video
-                )
-            
-            vocabulary = Vocabulary.objects.filter(word = my_word).order_by('likes')
-            return HttpResponseRedirect('/'+ my_word)
-            #
-            
-        else:
-            wordform = WordForm(request.POST)
-            return render(request, 'dictionary/base.html',)
+                print "word: " + my_word
+                print "description: " + my_description
+                print "sentence: " + my_sentence
+                print "video: " + my_video
+                
+                user = User.objects.get(username='denffer')
+                
+                Vocabulary.objects.create(
+                    word =  my_word, 
+                    description = my_description,
+                    sentence = my_sentence,
+                    author = user, 
+                    likes = 0, 
+                    video = my_video
+                    )
+                
+                vocabulary = Vocabulary.objects.filter(word = my_word).order_by('likes')
+                return HttpResponseRedirect('/'+ my_word)
+                #
+                
+            else:
+                wordform = WordForm(request.POST)
+                return render(request, 'dictionary/base.html',)
     else:
         wordform = WordForm(request.POST)
         return render(request, 'dictionary/base.html',)
@@ -78,14 +80,15 @@ def search(request, word):
             return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
         else:
             return render(request, 'dictionary/base.html',)
+            
 def error(request):
     return render(request, 'dictionary/404.html', {})
     
 def facebook_login(request):
     return render(request, 'dictionary/facebook.html', {})
     
-def create(request):
-    form = WordForm()
-    #return render(request, 'dictionary/404.html', {'form': form})
-    return render(request, 'dictionary/create_word.html', {'form': form})
+# def login(request):
+#     form = LoginForm()
+#     #return render(request, 'dictionary/404.html', {'form': form})
+#     return render(request, '404.html', {'form': form})
     
