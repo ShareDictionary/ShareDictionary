@@ -98,7 +98,7 @@
 						    <div class="form-group" style="margin-top:20px;">
                                 <label  class="col-sm-2 control-label">Word</label>
                                 <div class="col-sm-9">
-                                  <input  type="text" content = "{{ vocabulary.word }}" value="{{ vocabulary.word }}" class="form-control" style="background-color: #fafafa" placeholder="Word" name="word" id="word">
+                                  <input type="text" class="form-control" style="background-color: #fafafa" placeholder="Word" name="word" id="word" value="{{ vocabulary.word }}"/>
                                 </div>
                               </div>
                             <div class="form-group">
@@ -136,7 +136,7 @@
                             
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-9" align="right">
-                                  <button class="save btnadd"  id="add_word" onclick="check_if_can_post();"> Add</button>
+                                  <button type="button" class="save btnadd"  id="add_word" onclick="check_if_can_post();"> Add</button>
                                 </div>
                             </div>
                         </form>

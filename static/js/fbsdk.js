@@ -110,11 +110,8 @@
     }
     
     function check_if_can_post(){
-      if(document.getElementById("description").value==""||document.getElementById("sentence").value==""||document.getElementById("word").value=="") {
-        alert("你的輸入不完整");
-        $('#add_word').attr( 'type','button' );
-      }else{
-                
+        //$('#add_word').attr( 'type','button' );
+        
         FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
             // the user is logged in and has authenticated your
@@ -125,9 +122,14 @@
             var uid = response.authResponse.userID;
             var accessToken = response.authResponse.accessToken;
             
-            //$('#creating_word').removeClass( 'red-class' );
-            $("#add_word").attr('method', "POST");
-            $("#add_word").attr('type', "submit");
+            if(document.getElementById("description").value==""||document.getElementById("sentence").value==""||document.getElementById("word").value=="") {
+              alert("你的輸入不完整");
+              $('#add_word').attr( 'type','button' );
+            }else{
+              //$('#creating_word').removeClass( 'red-class' );
+              $("#add_word").attr('method', "POST");
+              $("#add_word").attr('type', "submit");
+            }
             
           }else{
               $('#add_word').attr( 'type','button' );
@@ -136,14 +138,22 @@
               FB.login();
               if (response.status === 'connected') {
                 //fetch_my_profile();
+                if(document.getElementById("description").value==""||document.getElementById("sentence").value==""||document.getElementById("word").value=="") {
+                  alert("你的輸入不完整");
+                  $('#add_word').attr( 'type','button' );
+                }else{
+                  //$('#creating_word').removeClass( 'red-class' );
+                  $("#add_word").attr('method', "POST");
+                  $("#add_word").attr('type', "submit");
+                }
                 $("#add_word").attr('method', "POST");
                 
               }
         }
         });
         
-        }
     }
+    
     
     
     
