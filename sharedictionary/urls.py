@@ -18,8 +18,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/admin/', include(admin.site.urls)),
     
-
-    url(r'^create_word$', views.create_word),
+    url(r'^create_word', views.create_word),
     url(r'^(?P<word>.*)$', views.search),
     #url(r'^login/facebook', views.login),
     url(r'^error$', views.error),
@@ -32,4 +31,3 @@ urlpatterns = patterns('',
     
     
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-

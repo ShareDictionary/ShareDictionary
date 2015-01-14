@@ -10,10 +10,9 @@ from django.shortcuts import redirect
 from datetime import datetime
 
 # Create your views here.
-def show_index(request):
-    vocabulary = Vocabulary.objects.filter(word__isnull=False).order_by('posted_date')
-    #vocabulary = get_object_or_404(Vocabulary)
-    return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
+def home(request):
+    #vocabulary = Vocabulary.objects.filter(word__isnull=False).order_by('posted_date')
+    return render(request, 'dictionary/base.html')
 
 def create_word(request):
     if request.method == 'POST':
@@ -69,24 +68,35 @@ def search(request, word):
     if request.method == 'POST':
         
         form = SearchForm(request.POST)
-        if form.is_valid():
-            vocabulary = Vocabulary.objects.filter(word = request.POST.get('word')).order_by('-likes')
-            
-            return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
+        
+        if request.POST.get('word') != "":
+            # TODO: write code...
+            if form.is_valid():
+                vocabulary = Vocabulary.objects.filter(word = request.POST.get('word')).order_by('-likes')
+                most_liked = Vocabulary.objects.all().order_by('-likes')[:5]
+                latest = Vocabulary.objects.all().order_by('-posted_date')[:5]
+                return render(request, 'dictionary/object.html', {'vocabulary': vocabulary, 'most_liked': most_liked, 'latest': latest})
 
         else:
             form = SearchForm(request.POST)
-            return render(request, 'dictionary/object.html',)
+            most_liked = Vocabulary.objects.all().order_by('-likes')[:5]
+            latest = Vocabulary.objects.all().order_by('-posted_date')[:5]
+            return render(request, 'dictionary/base.html', {'most_liked': most_liked, 'latest': latest})
         
-       
-        return render(request, 'dictionary/base.html', {'form': form})
+        return render(request, 'dictionary/base.html', {'most_liked': most_liked, 'latest': latest})
+        
     else:
         if word:
             word = word.replace('/','');
             vocabulary = Vocabulary.objects.filter(word = word).order_by('-likes')
-            return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
+            most_liked = Vocabulary.objects.all().order_by('-likes')[:5]
+            latest = Vocabulary.objects.all().order_by('-posted_date')[:5]
+            return render(request, 'dictionary/object.html', {'vocabulary': vocabulary, 'most_liked': most_liked, 'latest': latest})
+            
         else:
-            return render(request, 'dictionary/base.html',)
+            most_liked = Vocabulary.objects.all().order_by('-likes')[:5]
+            latest = Vocabulary.objects.all().order_by('-posted_date')[:5]
+            return render(request, 'dictionary/base.html', {'most_liked': most_liked, 'latest': latest})
             
 def error(request):
     return render(request, 'dictionary/404.html', {})

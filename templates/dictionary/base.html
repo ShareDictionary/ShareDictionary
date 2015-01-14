@@ -88,35 +88,35 @@
                     
                 <!--</li>-->
                 <li class="divider"></li>
-                <li><h4><strong>&nbsp; Top 5 </strong></h4>
+                <li><h4>   <strong>&nbsp;Top 5 </strong></h4>
                 </li>
-
+               
+                {% for most_liked in most_liked %}
+                    
                 <li>
-                    <a href="" target="blank" class="gitbook-link"><b>1. </b>Testing1</a>
+                    <a href="" target="blank" class="gitbook-link"><b>{{ forloop.counter }}. </b>{{ most_liked.word }}</a>
                 </li>
-                <li>
-                    <a href="" target="blank" class="gitbook-link"><b>2. </b>Testing1</a>
-                </li>
-                <li>
-                    <a href="" target="blank" class="gitbook-link"><b>3. </b>Testing1</a>
-                </li>
+             
+                {% endfor %}
+                
                 
                 <li class="divider"></li>
-                <li><h4><strong>&nbsp; Most LIKES</strong></h4>
+                
+                <li><h4>   <strong>&nbsp;Latest </strong></h4>
                 </li>
-
+               
+                {% for latest in latest %}
+                    
                 <li>
-                    <a href="" target="blank" class="gitbook-link"><b>1. </b>Testing1</a>
+                    <a href="" target="blank" class="gitbook-link"><b>{{ forloop.counter }}. </b>   {{ latest.word }}</a>
                 </li>
-                <li>
-                    <a href="" target="blank" class="gitbook-link"><b>2. </b>Testing2</a>
-                </li>
-                <li>
-                    <a href="" target="blank" class="gitbook-link"><b>3. </b>Testing3</a>
-                </li>
+             
+                {% endfor %}
+                
                 
                 <li class="divider"></li>
-                <li><h4><strong>&nbsp; Contributor of the Day</strong></h4>
+                
+                <li><h4>   <strong>&nbsp;Contributors</strong></h4>
                 </li>
 
                 <li>
@@ -129,18 +129,6 @@
                     <a href="https://www.facebook.com/profile.php?id=1733400486&fref=ts" target="blank" class="gitbook-link"><b>3. </b>Denffer</a>
                 </li>
 
-                <li class="divider"></li>
-                <li><h4><strong>&nbsp; Contributor of the Month</strong></h4>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/profile.php?id=100000440338175" target="blank" class="gitbook-link"><b>1. </b>Mia</a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/profile.php?id=100002578523190&fref=ts" target="blank" class="gitbook-link"><b>2. </b>Tom</a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/profile.php?id=1733400486&fref=ts" target="blank" class="gitbook-link"><b>3. </b>Denffer</a>
-                </li>
             </ul>
 
         </div>
