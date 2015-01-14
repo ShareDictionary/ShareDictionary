@@ -73,8 +73,6 @@
                 <li class="chapter active" data-level="0" >
                     
 
-                    <a href="#"  id="welcome"><img id="my-profile-picture">  Welcome <u id="my-profile-name"></u></a>
-
                     <a href="#"  id="welcome"><img id="my-profile-picture"><b style="font-size:18px">&nbsp;Welcome</b><u style="font-size:18px" id="my-profile-name"></u></a>
 
                 </li>
@@ -152,9 +150,10 @@
                     </a>
                     <div class="dropdown pull-right">
                         <h4></h4>
-                        <a data-toggle="modal" href="#myModal">
-                            <button type="button" class="btn">Login</button>
+                        <a data-toggle="modal" href="#myModal" id="login-toggle" onclick="FB_logout()">
+                            <button type="button" class="btn" id="login-button">Login</button>
                         </a>
+                        <h4></h4>
                     </div>
                 </div>
 
@@ -230,7 +229,7 @@
                             
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-9" align="right">
-                                  <button type="submit" class="save btnadd" onclick="check_if_can_post()" name="creating_word" id="creating_word"> Add</button>
+                                  <button class="save btnadd" onclick="check_if_can_post()" name="creating_word" id="creating_word"> Add</button>
                                 </div>
                             </div>
                         </form>
@@ -344,4 +343,4 @@
 <!-- test -->
 <!-- test -->
 </html>
-ls
+

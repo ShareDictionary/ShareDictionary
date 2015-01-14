@@ -34,6 +34,7 @@
                 console.log(response);
                 
                 fetch_my_profile();
+                check_FB_login();
             });
 
             // define the action when user clicked the login button.
@@ -73,6 +74,37 @@
             var accessToken = response.authResponse.accessToken;
             
             fetch_my_profile();
+            var myModal = document.getElementById("login-toggle");
+            myModal.removeAttribute("href");
+            var loginButton = document.getElementById("login-button");
+            loginButton.innerHTML="logout";
+            
+            
+          }else{
+            //FB.logout();
+            loginButton = document.getElementById("login-button");
+            loginButton.innerHTML="login";
+            var logintoggle = document.getElementById("login-toggle");
+            logintoggle.setAttribute("href","#myModal");
+            
+            //$("#login-button").innerHTML();
+          }
+        });
+    }
+    function FB_logout(){
+        FB.getLoginStatus(function(response) {
+          if (response.status === 'connected') {
+            FB.logout();
+            //check_FB_login();
+            
+            var loginButton = document.getElementById("login-button");
+            loginButton.innerHTML="login";
+            document.location.reload(true);
+            //window.fbLoaded();.
+            
+          }else{
+          var myModal = document.getElementById("login-toggle");
+            myModal.setAttribute("href","#myModal");
           }
         });
     }
@@ -90,11 +122,21 @@
             
             //$('#creating_word').removeClass( 'red-class' );
             $("#creating_word").attr('method', "POST");
+            $("#creating_word").attr('type', "submit");
             
           }else{
+              $('#creating_word').attr( 'type','button' );
+              //$('#creating_word').removeClass( 'red-class' );
+              //window.fbLoaded();
               FB.login();
-              fetch_my_profile();
-          }
+              if (response.status === 'connected') {
+                //fetch_my_profile();
+                $("#creating_word").attr('method', "POST");
+                
+              }
+        }
         });
     }
+    
+    
     
