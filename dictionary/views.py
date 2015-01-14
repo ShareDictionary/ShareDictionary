@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.shortcuts import redirect
+from datetime import datetime
 
 # Create your views here.
 def show_index(request):
@@ -19,37 +20,42 @@ def create_word(request):
         wordform = WordForm(request.POST)
         if wordform.is_valid():
            
+            
+            
             my_word = wordform.data.get("word")
             my_description = wordform.data.get("description")
             my_sentence = wordform.data.get('sentence')
             my_video = wordform.data.get('video')
+            my_time = datetime.now()
             
-            if(my_word != "" & my_description != ""  & my_sentence != ""  & my_video != ""):
             
-                print "word: " + my_word
-                print "description: " + my_description
-                print "sentence: " + my_sentence
-                print "video: " + my_video
+            # if my_word != "" & my_description != ""  & my_sentence != ""  & my_video != "" :
+            
+            print "word: " + my_word
+            print "description: " + my_description
+            print "sentence: " + my_sentence
+            print "video: " + my_video
                 
-                user = User.objects.get(username='denffer')
+            user = User.objects.get(username='denffer')
                 
-                Vocabulary.objects.create(
-                    word =  my_word, 
-                    description = my_description,
-                    sentence = my_sentence,
-                    author = user, 
-                    likes = 0, 
-                    video = my_video
-                    )
+            Vocabulary.objects.create(
+                word =  my_word, 
+                description = my_description,
+                sentence = my_sentence,
+                author = user, 
+                likes = 0, 
+                video = my_video,
+                posted_date = my_time
+                  )
                 
                 #vocabulary = Vocabulary.objects.filter(word = my_word).order_by('-likes')
                 
-                return HttpResponseRedirect('/'+ my_word)
+            return HttpResponseRedirect('/'+ my_word)
                 #
                 
-            else:
-                wordform = WordForm(request.POST)
-                return render(request, 'dictionary/base.html',)
+        else:
+            wordform = WordForm(request.POST)
+            return render(request, 'dictionary/base.html',)
     else:
         wordform = WordForm(request.POST)
         return render(request, 'dictionary/base.html',)

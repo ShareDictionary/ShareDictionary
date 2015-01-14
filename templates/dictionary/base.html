@@ -62,7 +62,7 @@
             
                 
 // });
-//         };
+         };
     </script>
     
 
@@ -187,58 +187,7 @@
                         {% endblock content %}
 
 
-                        <div class="page-inner container" style="margin-bottom:20px; padding:20px">
-
-						<form action="/create" class="form-horizontal" method="POST" name="create_word" id="create_word" align="conter">{% csrf_token %}
-						    
-						    {{ form }}
-						    <div class="form-group" style="margin-top:20px;">
-                                <label  class="col-sm-2 control-label">Word</label>
-                                <div class="col-sm-9">
-                                  <input  type="text" value="{{ vocabulary.word }}" class="form-control" style="background-color: #fafafa" placeholder="Word" name="word" id="word">
-                                </div>
-                              </div>
-                            <div class="form-group">
-                                <label  class="col-sm-2 control-label">Description</label>
-                                <div class="col-sm-9">
-                                    <input  class="form-control"  style="background-color: #fafafa"placeholder="Definition" name="description" id="description">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label  class="col-sm-2 control-label">Example</label>
-                                <div class="col-sm-9">
-                                    <input  class="form-control" style="background-color: #fafafa" placeholder="Give an example" name="sentence" id="sentence">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label  class="col-sm-2 control-label">Video</label>
-                                <div class="col-sm-9">
-                                    <input  type="video" class="form-control"  style="background-color: #fafafa" placeholder="http://your_video_address" name="video" id="video">
-                                </div>
-                                <!--<span><button class="btnadd" id="loadvideo" onClick="loadVideo();">Upload</button></span>-->
-                                <!--<span><button class="btnadd" id="loadvideo" onClick="loadVideo();">Upload</button></span>-->
-                            </div>
-    
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-9" id="video_frame">
-                                   
-                                    <!--{% video video_frame as my_video %}-->
-                                        
-                                    <!--       {% video my_video '512x315' %}-->
-                                           
-                                    <!--{% endvideo %}-->
-                                <iframe width="0" height="0" id="showvideo" src="" frameborder="0" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-9" align="right">
-                                  <button type="submit" class="save btnadd"  id="add_word"> Add</button>
-                                </div>
-                            </div>
-                        </form>
-
-					</div>
+                        
                         
                         
                     </div>
@@ -340,4 +289,3 @@
 <!-- test -->
 <!-- test -->
 </html>
-ls
