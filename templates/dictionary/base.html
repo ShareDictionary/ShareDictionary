@@ -83,7 +83,7 @@
                     
 
 
-                    <a href="/"  id="welcome"><img id="my-profile-picture"><b style="font-size:18px">&nbsp;Welcome</b><u style="font-size:18px" id="my-profile-name"></u></a>
+                    <a id="welcome" style="padding-left:40px"><img id="my-profile-picture"><b style="font-size:18px">&nbsp; Welcome </b><u style="font-size:18px" id="my-profile-name"></u></a>
 
 
                 </li>
@@ -92,27 +92,27 @@
                     
                 <!--</li>-->
                 <li class="divider"></li>
-                <li><h4>   <strong>&nbsp;Top 5 </strong></h4>
+                
+                <li><h4 style="padding-left:25px">   <strong>&nbsp;Top 5 </strong></h4>
                 </li>
                
                 {% for most_liked in most_liked %}
                     
                 <li>
-                    <a href="" target="blank" class="gitbook-link"><b>{{ forloop.counter }}. </b>{{ most_liked.word }}</a>
+                    <a href="" target="blank" class="gitbook-link" style="padding-left:60px"><b>{{ forloop.counter }}. </b>{{ most_liked.word }}</a>
                 </li>
              
                 {% endfor %}
                 
-                
                 <li class="divider"></li>
                 
-                <li><h4>   <strong>&nbsp;Latest </strong></h4>
+                <li><h4 style="padding-left:25px">   <strong>&nbsp;Latest </strong></h4>
                 </li>
                
                 {% for latest in latest %}
                     
                 <li>
-                    <a href="" target="blank" class="gitbook-link"><b>{{ forloop.counter }}. </b>   {{ latest.word }}</a>
+                    <a href="" target="blank" class="gitbook-link" style="padding-left:60px"><b>{{ forloop.counter }}. </b>   {{ latest.word }}</a>
                 </li>
              
                 {% endfor %}
@@ -120,17 +120,17 @@
                 
                 <li class="divider"></li>
                 
-                <li><h4>   <strong>&nbsp;Contributors</strong></h4>
+                <li><h4 style="padding-left:25px">   <strong>&nbsp;Contributors</strong></h4>
                 </li>
 
                 <li>
-                    <a href="https://www.facebook.com/profile.php?id=100000440338175" target="blank" class="gitbook-link"><b>1. </b>Mia</a>
+                    <a href="https://www.facebook.com/profile.php?id=100000440338175" target="blank" class="gitbook-link" style="padding-left:60px"><b>1. </b>Mia</a>
                 </li>
                 <li>
-                    <a href="https://www.facebook.com/profile.php?id=100002578523190&fref=ts" target="blank" class="gitbook-link"><b>2. </b>Tom</a>
+                    <a href="https://www.facebook.com/profile.php?id=100002578523190&fref=ts" target="blank" class="gitbook-link" style="padding-left:60px"><b>2. </b>Tom</a>
                 </li>
                 <li>
-                    <a href="https://www.facebook.com/profile.php?id=1733400486&fref=ts" target="blank" class="gitbook-link"><b>3. </b>Denffer</a>
+                    <a href="https://www.facebook.com/profile.php?id=1733400486&fref=ts" target="blank" class="gitbook-link" style="padding-left:60px"><b>3. </b>Denffer</a>
                 </li>
 
             </ul>
@@ -245,7 +245,8 @@
     <script src="/static/js/index.js"></script>
     <script>
         function test(){
-            if(document.getElementById("description")=="") 
+            alert
+            if(document.getElementById("description")==""||document.getElementById("sentence")==""||document.getElementById("word")=="") 
                 {
                         alert("輸入不完整");
                 }

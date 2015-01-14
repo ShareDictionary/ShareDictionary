@@ -64,9 +64,9 @@
                                                     name: 'ShareDictionary',
                                                     display: "popup",
                                                     link: ' https://sharedictionary-tom8u4286-1.c9.io/{{ vocabulary.word }}',
-                                                    picture: 'https://sharedictionary-tom8u4286-1.c9.io/static/image/logo.png',
-                                                    description: 'The Word "{{ vocabulary.word }}" is shared in ShareDictionary!',
-                                                    caption: '',
+                                                    picture: 'https://sharedictionary-tom8u4286-1.c9.io/static/image/logo-D.jpg',
+                                                    description: 'wants to share the word "{{ vocabulary.word }}" with you!',
+                                                    caption: 'Join us, share a word !',
                                                     //{{vocabulary.sentence}}
                                                 });
                                             });
@@ -136,7 +136,7 @@
                             
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-9" align="right">
-                                  <button type="submit" class="save btnadd"  id="add_word"> Add</button>
+                                  <button type="submit" class="save btnadd"  id="add_word" onclick="test();"> Add</button>
                                 </div>
                             </div>
                         </form>
