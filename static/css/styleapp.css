@@ -110,10 +110,10 @@ form{
 .container{
 	background-color:#ffffff;
 	width: 60%;
-	box-shadow: 2px 2px 3px 0px #aaaaaa;
-	-webkit-box-shadow: 2px 2px 3px 0px #aaaaaa;
-	-moz-box-shadow: 2px 2px 3px 0px #aaaaaa;
-	-o-box-shadow: 2px 2px 3px 0px #aaaaaa;
+	box-shadow: 2px 2px 3px 2px #aaaaaa;
+	-webkit-box-shadow: 2px 2px 3px 2px #aaaaaa;
+	-moz-box-shadow: 2px 2px 3px 2px #aaaaaa;
+	-o-box-shadow: 2px 2px 3px 2px #aaaaaa;
 
 }
 

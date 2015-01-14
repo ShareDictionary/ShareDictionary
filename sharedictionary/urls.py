@@ -19,15 +19,15 @@ urlpatterns = patterns('',
     url(r'^admin/admin/', include(admin.site.urls)),
     
 
-    url(r'^create$', views.create_word),
+    url(r'^create_word$', views.create_word),
     url(r'^(?P<word>.*)$', views.search),
-
+    #url(r'^login/facebook', views.login),
     url(r'^error$', views.error),
     url(r'^search', views.searchRedirect),
     url(r'^facebook/$', views.facebook_login),
     #url(r'', include('social.apps.django_app.urls', namespace='social')),
    
-    url(r'^create/$', 'dictionary.views.create', name='create'),
+    #url(r'^create/$', 'dictionary.views.create', name='create'),
 
     
     

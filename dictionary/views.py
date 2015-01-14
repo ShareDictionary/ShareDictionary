@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.shortcuts import redirect
+from datetime import datetime
 
 # Create your views here.
 def show_index(request):
@@ -19,31 +20,39 @@ def create_word(request):
         wordform = WordForm(request.POST)
         if wordform.is_valid():
            
+            
+            
             my_word = wordform.data.get("word")
             my_description = wordform.data.get("description")
             my_sentence = wordform.data.get('sentence')
             my_video = wordform.data.get('video')
-        
+            my_time = datetime.now()
+            
+            
+            # if my_word != "" & my_description != ""  & my_sentence != ""  & my_video != "" :
+            
             print "word: " + my_word
             print "description: " + my_description
             print "sentence: " + my_sentence
             print "video: " + my_video
-            
+                
             user = User.objects.get(username='denffer')
-            
+                
             Vocabulary.objects.create(
                 word =  my_word, 
                 description = my_description,
                 sentence = my_sentence,
                 author = user, 
                 likes = 0, 
-                video = my_video
-                )
-            
-            vocabulary = Vocabulary.objects.filter(word = my_word).order_by('likes')
+                video = my_video,
+                posted_date = my_time
+                  )
+                
+                #vocabulary = Vocabulary.objects.filter(word = my_word).order_by('-likes')
+                
             return HttpResponseRedirect('/'+ my_word)
-            #
-            
+                #
+                
         else:
             wordform = WordForm(request.POST)
             return render(request, 'dictionary/base.html',)
@@ -61,7 +70,7 @@ def search(request, word):
         
         form = SearchForm(request.POST)
         if form.is_valid():
-            vocabulary = Vocabulary.objects.filter(word = request.POST.get('word')).order_by('likes')
+            vocabulary = Vocabulary.objects.filter(word = request.POST.get('word')).order_by('-likes')
             
             return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
 
@@ -74,18 +83,19 @@ def search(request, word):
     else:
         if word:
             word = word.replace('/','');
-            vocabulary = Vocabulary.objects.filter(word = word).order_by('likes')
+            vocabulary = Vocabulary.objects.filter(word = word).order_by('-likes')
             return render(request, 'dictionary/object.html', {'vocabulary': vocabulary})
         else:
             return render(request, 'dictionary/base.html',)
+            
 def error(request):
     return render(request, 'dictionary/404.html', {})
     
 def facebook_login(request):
     return render(request, 'dictionary/facebook.html', {})
     
-def create(request):
-    form = WordForm()
-    #return render(request, 'dictionary/404.html', {'form': form})
-    return render(request, 'dictionary/create_word.html', {'form': form})
+# def login(request):
+#     form = LoginForm()
+#     #return render(request, 'dictionary/404.html', {'form': form})
+#     return render(request, '404.html', {'form': form})
     
